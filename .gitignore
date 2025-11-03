@@ -1,0 +1,14 @@
+# Airflow runtime
+airflow/logs/
+airflow/logs/**
+
+# Python rác
+**/__pycache__/
+**/.pytest_cache/
+
+# Log files
+**/*.log
+
+# Env / configs cục bộ
+.env
+airflow/config/airflow.cfg
