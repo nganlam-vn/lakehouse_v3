@@ -25,7 +25,7 @@ x-airflow-common: &airflow-common
     - ${AIRFLOW_PROJ_DIR:-.}/airflow/plugins:/opt/airflow/plugins
     - ${AIRFLOW_PROJ_DIR:-.}/requirements.txt:/opt/airflow/requirements.txt
     - ${AIRFLOW_PROJ_DIR:-.}/.env:/opt/airflow/.env
-    - ${AIRFLOW_PROJ_DIR:-.}/config.ini:/opt/airflow/config.ini
+    # - ${AIRFLOW_PROJ_DIR:-.}/config.ini:/opt/airflow/config.ini
     - /var/run/docker.sock:/var/run/docker.sock
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on: &airflow-common-depends-on
@@ -173,7 +173,14 @@ services:
   airflow-apiserver:
     <<: *airflow-common
     container_name: airflow-apiserver
-    command: api-server
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        if [ -f /opt/airflow/requirements.txt ]; then
+          pip install --no-cache-dir -r /opt/airflow/requirements.txt
+        fi
+        exec airflow api-server
     ports:
       - "8080:8080"
     healthcheck:
@@ -192,7 +199,14 @@ services:
   airflow-scheduler:
     <<: *airflow-common
     container_name: airflow-scheduler
-    command: scheduler
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        if [ -f /opt/airflow/requirements.txt ]; then
+          pip install --no-cache-dir -r /opt/airflow/requirements.txt
+        fi
+        exec airflow scheduler
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8974/health"]
       interval: 30s
@@ -209,7 +223,14 @@ services:
   airflow-dag-processor:
     <<: *airflow-common
     container_name: airflow-dag-processor
-    command: dag-processor
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        if [ -f /opt/airflow/requirements.txt ]; then
+          pip install --no-cache-dir -r /opt/airflow/requirements.txt
+        fi
+        exec airflow dag-processor
     healthcheck:
       test: ["CMD-SHELL", 'airflow jobs check --job-type DagProcessorJob --hostname "$${HOSTNAME}"']
       interval: 30s
@@ -226,7 +247,14 @@ services:
   airflow-triggerer:
     <<: *airflow-common
     container_name: airflow-triggerer
-    command: triggerer
+    entrypoint: /bin/bash
+    command:
+      - -c
+      - |
+        if [ -f /opt/airflow/requirements.txt ]; then
+          pip install --no-cache-dir -r /opt/airflow/requirements.txt
+        fi
+        exec airflow triggerer
     healthcheck:
       test: ["CMD-SHELL", 'airflow jobs check --job-type TriggererJob --hostname "$${HOSTNAME}"']
       interval: 30s
@@ -251,9 +279,16 @@ services:
         set -eu
         mkdir -p /opt/airflow/logs /opt/airflow/dags /opt/airflow/tasks /opt/airflow/plugins /opt/airflow/config
         export PATH="/home/airflow/.local/bin:$PATH"
-        if [ -f /opt/airflow/requirements.txt ]; then
+        
+        # Install requirements if file exists and is not a directory
+        if [ -f /opt/airflow/requirements.txt ] && [ ! -d /opt/airflow/requirements.txt ]; then
+          echo "Installing Python packages from requirements.txt..."
           pip install --no-cache-dir -r /opt/airflow/requirements.txt
+        else
+          echo "Warning: requirements.txt not found or is a directory. Installing default packages..."
+          pip install --no-cache-dir minio pandas requests configparser
         fi
+        
         airflow db migrate
         airflow users create \
           --username "$$_AIRFLOW_WWW_USER_USERNAME" \

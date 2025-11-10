@@ -1,0 +1,4 @@
+minio==7.2.0
+pandas
+requests
+configparser
