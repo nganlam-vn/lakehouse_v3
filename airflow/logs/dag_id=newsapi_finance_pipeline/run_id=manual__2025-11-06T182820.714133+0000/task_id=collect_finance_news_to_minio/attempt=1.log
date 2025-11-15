@@ -1,0 +1,14 @@
+{"timestamp":"2025-11-06T18:29:36.374684Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-06T18:29:36.375713Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/finance_news_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-06T18:29:38.036944Z","level":"info","event":"Sẽ lấy tin cho các ngày (trừ hôm nay 2025-11-07): ['2025-11-06', '2025-11-05', '2025-11-04', '2025-11-03', '2025-11-02']","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:29:38.038474Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:29:38.055891Z","level":"info","event":"--> 2025-11-06 (VN time) | from=2025-11-05T17:00:00Z to=2025-11-06T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:29:38.928473Z","level":"info","event":"   • Trang 1: nhận 74 bài, thêm mới 74, totalResults=76","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:29:39.077136Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-06/ts_20251106T182938Z.json (68476 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:29:40.077588Z","level":"info","event":"--> 2025-11-05 (VN time) | from=2025-11-04T17:00:00Z to=2025-11-05T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:29:40.502294Z","level":"info","event":"   • Trang 1: nhận 97 bài, thêm mới 97, totalResults=1242","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:29:40.578247Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-05/ts_20251106T182940Z.json (88232 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:28:43.389243Z","level":"info","event":"--> 2025-11-04 (VN time) | from=2025-11-03T17:00:00Z to=2025-11-04T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:28:43.800080Z","level":"info","event":"   • Trang 1: nhận 98 bài, thêm mới 98, totalResults=1298","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:28:43.870754Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-04/ts_20251106T182843Z.json (76636 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:28:44.871204Z","level":"info","event":"--> 2025-11-03 (VN time) | from=2025-11-02T17:00:00Z to=2025-11-03T16:59:59.999000Z","logger":"task.stdout"}

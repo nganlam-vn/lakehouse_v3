@@ -1,0 +1,29 @@
+{"timestamp":"2025-11-10T07:23:42.325028Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-10T07:23:42.326990Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-10T07:23:42.553076Z","level":"info","event":"🎯 Target date (NY): 2025-11-06","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:23:42.553685Z","level":"info","event":"🚀 Start AV collector | symbols=['AAPL', 'MSFT', 'IBM', 'GOOGL', 'AMZN'] | interval=5min | batches=3","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:23:42.554277Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:23:42.554547Z","level":"info","event":"🔹 Batch 1/3: ['AAPL', 'MSFT']","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:23:45.041594Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/stocks_intraday/symbol=AAPL/dt=2025-11-06/ts_20251110T072344Z.json  (39740 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:23:45.042185Z","level":"info","event":"AAPL: uploaded 192 records for dt=2025-11-06","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:23:45.042592Z","level":"info","event":"⏳ sleep 22s between symbols…","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:24:08.754835Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/stocks_intraday/symbol=MSFT/dt=2025-11-06/ts_20251110T072408Z.json  (39691 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:24:08.755238Z","level":"info","event":"MSFT: uploaded 192 records for dt=2025-11-06","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:24:08.755477Z","level":"info","event":"⏳ sleep 22s between symbols…","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:24:30.756982Z","level":"info","event":"⏳ Sleep 70s between batches…","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:25:40.759922Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:25:40.760394Z","level":"info","event":"🔹 Batch 2/3: ['IBM', 'GOOGL']","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:25:43.111100Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/stocks_intraday/symbol=IBM/dt=2025-11-06/ts_20251110T072543Z.json  (38702 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:25:43.111629Z","level":"info","event":"IBM: uploaded 189 records for dt=2025-11-06","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:25:43.112108Z","level":"info","event":"⏳ sleep 25s between symbols…","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:26:09.864683Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/stocks_intraday/symbol=GOOGL/dt=2025-11-06/ts_20251110T072711Z.json  (40010 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:26:09.865139Z","level":"info","event":"GOOGL: uploaded 192 records for dt=2025-11-06","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:26:09.865380Z","level":"info","event":"⏳ sleep 25s between symbols…","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:26:34.867396Z","level":"info","event":"⏳ Sleep 70s between batches…","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:28:46.690674Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:28:46.691130Z","level":"info","event":"🔹 Batch 3/3: ['AMZN']","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:27:46.589388Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/stocks_intraday/symbol=AMZN/dt=2025-11-06/ts_20251110T072746Z.json  (39765 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:27:46.589805Z","level":"info","event":"AMZN: uploaded 192 records for dt=2025-11-06","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:27:46.590030Z","level":"info","event":"⏳ sleep 24s between symbols…","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:28:10.595487Z","level":"info","event":"⏳ Sleep 70s between batches…","logger":"task.stdout"}
+{"timestamp":"2025-11-10T07:29:20.604674Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

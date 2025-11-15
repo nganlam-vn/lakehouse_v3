@@ -1,0 +1,6 @@
+{"timestamp":"2025-11-06T13:15:32.432779Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-06T13:15:32.434079Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/finance_news_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-06T13:15:32.848196Z","level":"info","event":"Đang lấy tin cho ngày: 2025-11-06","logger":"root","filename":"fetch_finance_news.py","lineno":30}
+{"timestamp":"2025-11-06T13:15:33.593744Z","level":"info","event":"Thành công! Lấy được 0 bài.","logger":"root","filename":"fetch_finance_news.py","lineno":47}
+{"timestamp":"2025-11-06T13:15:33.593900Z","level":"info","event":"Không có bài báo nào, bỏ qua upload.","logger":"root","filename":"fetch_finance_news.py","lineno":54}
+{"timestamp":"2025-11-06T13:15:33.595466Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

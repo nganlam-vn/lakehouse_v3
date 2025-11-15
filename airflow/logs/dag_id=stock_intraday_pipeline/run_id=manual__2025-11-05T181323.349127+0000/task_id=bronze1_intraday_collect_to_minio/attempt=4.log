@@ -1,0 +1,28 @@
+{"timestamp":"2025-11-05T18:56:22.857990Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-05T18:56:22.859230Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-05T18:56:23.375627Z","level":"info","event":"🚀 Start AV collector | symbols=['AAPL', 'MSFT', 'IBM', 'GOOGL', 'AMZN'] | interval=5min | batches=3","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:56:23.377018Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:56:23.377676Z","level":"info","event":"🔹 Batch 1/3: ['AAPL', 'MSFT']","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:56:26.477942Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/stocks_intraday/symbol=AAPL/ts_20251105T185626Z.json  (659937 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:56:26.478389Z","level":"info","event":"✅ AAPL: uploaded 4224 records","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:56:26.478663Z","level":"info","event":"⏳ sleep 25s between symbols…","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:56:53.377464Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/stocks_intraday/symbol=MSFT/ts_20251105T185653Z.json  (657784 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:56:53.377916Z","level":"info","event":"✅ MSFT: uploaded 4224 records","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:56:53.378184Z","level":"info","event":"⏳ sleep 23s between symbols…","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:58:14.906006Z","level":"info","event":"⏳ Sleep 70s between batches…","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:59:24.904902Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:59:24.905460Z","level":"info","event":"🔹 Batch 2/3: ['IBM', 'GOOGL']","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:58:28.710250Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/stocks_intraday/symbol=IBM/ts_20251105T185828Z.json  (646915 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:58:28.710921Z","level":"info","event":"✅ IBM: uploaded 4204 records","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:58:28.711367Z","level":"info","event":"⏳ sleep 23s between symbols…","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:58:53.650333Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/stocks_intraday/symbol=GOOGL/ts_20251105T185853Z.json  (663284 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:58:53.650764Z","level":"info","event":"✅ GOOGL: uploaded 4224 records","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:58:53.651016Z","level":"info","event":"⏳ sleep 24s between symbols…","logger":"task.stdout"}
+{"timestamp":"2025-11-05T18:59:17.660072Z","level":"info","event":"⏳ Sleep 70s between batches…","logger":"task.stdout"}
+{"timestamp":"2025-11-05T19:00:27.648417Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-05T19:00:27.649019Z","level":"info","event":"🔹 Batch 3/3: ['AMZN']","logger":"task.stdout"}
+{"timestamp":"2025-11-05T19:00:29.618223Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/stocks_intraday/symbol=AMZN/ts_20251105T190029Z.json  (660934 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-05T19:00:29.618649Z","level":"info","event":"✅ AMZN: uploaded 4224 records","logger":"task.stdout"}
+{"timestamp":"2025-11-05T19:00:29.618873Z","level":"info","event":"⏳ sleep 22s between symbols…","logger":"task.stdout"}
+{"timestamp":"2025-11-05T19:01:50.158347Z","level":"info","event":"⏳ Sleep 70s between batches…","logger":"task.stdout"}
+{"timestamp":"2025-11-05T19:02:01.619211Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
