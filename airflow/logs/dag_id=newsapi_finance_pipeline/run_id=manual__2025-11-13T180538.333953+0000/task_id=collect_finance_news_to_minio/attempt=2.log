@@ -1,0 +1,22 @@
+{"timestamp":"2025-11-13T18:08:13.032542Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-13T18:08:13.035840Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/finance_news_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-13T18:08:14.468540Z","level":"info","event":"Sẽ lấy tin cho các ngày (trừ hôm nay 2025-11-14): ['2025-11-13', '2025-11-12', '2025-11-11', '2025-11-10', '2025-11-09']","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:14.469066Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:14.488964Z","level":"info","event":"--> 2025-11-13 (VN time) | from=2025-11-12T17:00:00Z to=2025-11-13T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:16.024207Z","level":"info","event":"   • Trang 1: nhận 46 bài, thêm mới 46, totalResults=47","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:16.222732Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-13/ts_20251113T180816Z.json (41088 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:09:20.490637Z","level":"info","event":"--> 2025-11-12 (VN time) | from=2025-11-11T17:00:00Z to=2025-11-12T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:17.648057Z","level":"info","event":"   • Trang 1: nhận 98 bài, thêm mới 98, totalResults=1035","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:17.719924Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-12/ts_20251113T180817Z.json (90262 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:18.720466Z","level":"info","event":"--> 2025-11-11 (VN time) | from=2025-11-10T17:00:00Z to=2025-11-11T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:19.155843Z","level":"info","event":"   • Trang 1: nhận 95 bài, thêm mới 95, totalResults=1006","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:19.237195Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-11/ts_20251113T180819Z.json (86474 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:20.237891Z","level":"info","event":"--> 2025-11-10 (VN time) | from=2025-11-09T17:00:00Z to=2025-11-10T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:20.661891Z","level":"info","event":"   • Trang 1: nhận 99 bài, thêm mới 99, totalResults=761","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:20.735587Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-10/ts_20251113T180820Z.json (90072 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:21.736110Z","level":"info","event":"--> 2025-11-09 (VN time) | from=2025-11-08T17:00:00Z to=2025-11-09T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:22.177157Z","level":"info","event":"   • Trang 1: nhận 98 bài, thêm mới 98, totalResults=335","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:22.254029Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-09/ts_20251113T180822Z.json (84309 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:23.254432Z","level":"info","event":"✅ Done. Tổng số bài: 436","logger":"task.stdout"}
+{"timestamp":"2025-11-13T18:08:23.256178Z","level":"info","event":"Done. Returned value was: 436","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2025-11-13T18:08:23.258729Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019a7e64-faba-7b08-b861-ef4b0c68f466'), task_id='collect_finance_news_to_minio', dag_id='newsapi_finance_pipeline', run_id='manual__2025-11-13T18:05:38.333953+00:00', try_number=2, dag_version_id=UUID('019a7e1d-2cef-72c5-bfe7-409c849d30e1'), map_index=-1, hostname='8acc6b701705', context_carrier={}, task=<Task(PythonOperator): collect_finance_news_to_minio>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=5, start_date=datetime.datetime(2025, 11, 13, 18, 8, 12, 922480, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1352}

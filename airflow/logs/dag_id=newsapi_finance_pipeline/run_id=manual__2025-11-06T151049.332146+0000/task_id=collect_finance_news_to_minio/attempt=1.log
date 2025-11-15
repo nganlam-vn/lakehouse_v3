@@ -1,0 +1,38 @@
+{"timestamp":"2025-11-06T15:10:54.192448Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-06T15:10:54.194468Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/finance_news_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-06T15:10:54.592095Z","level":"info","event":"Sẽ lấy tin cho các ngày (trừ hôm nay 2025-11-06): ['2025-11-05', '2025-11-04', '2025-11-03', '2025-11-02', '2025-11-01', '2025-10-31', '2025-10-30', '2025-10-29', '2025-10-28', '2025-10-27']","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:10:54.593664Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:10:54.598352Z","level":"info","event":"--> 2025-11-05 (VN time) | from=2025-11-04T17:00:00Z to=2025-11-05T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:10:57.486959Z","level":"info","event":"   • Trang 1: nhận 97 bài, thêm mới 97, totalResults=1140","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:10:57.564732Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/newsapi/date=2025-11-05/ts_20251106T151057Z.json (89251 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:10:58.565342Z","level":"info","event":"--> 2025-11-04 (VN time) | from=2025-11-03T17:00:00Z to=2025-11-04T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:10:59.763413Z","level":"info","event":"   • Trang 1: nhận 98 bài, thêm mới 98, totalResults=1298","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:10:59.941312Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/newsapi/date=2025-11-04/ts_20251106T151059Z.json (76636 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:00.941894Z","level":"info","event":"--> 2025-11-03 (VN time) | from=2025-11-02T17:00:00Z to=2025-11-03T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:01.897616Z","level":"info","event":"   • Trang 1: nhận 99 bài, thêm mới 99, totalResults=829","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:01.989753Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/newsapi/date=2025-11-03/ts_20251106T151101Z.json (92288 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:02.990321Z","level":"info","event":"--> 2025-11-02 (VN time) | from=2025-11-01T17:00:00Z to=2025-11-02T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:04.173779Z","level":"info","event":"   • Trang 1: nhận 98 bài, thêm mới 98, totalResults=345","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:04.248946Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/newsapi/date=2025-11-02/ts_20251106T151104Z.json (84416 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:05.249348Z","level":"info","event":"--> 2025-11-01 (VN time) | from=2025-10-31T17:00:00Z to=2025-11-01T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:07.285722Z","level":"info","event":"   • Trang 1: nhận 99 bài, thêm mới 99, totalResults=504","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:07.356099Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/newsapi/date=2025-11-01/ts_20251106T151107Z.json (92938 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:08.356559Z","level":"info","event":"--> 2025-10-31 (VN time) | from=2025-10-30T17:00:00Z to=2025-10-31T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:09.425317Z","level":"info","event":"   • Trang 1: nhận 97 bài, thêm mới 97, totalResults=1068","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:09.499161Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/newsapi/date=2025-10-31/ts_20251106T151109Z.json (86448 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:10.499799Z","level":"info","event":"--> 2025-10-30 (VN time) | from=2025-10-29T17:00:00Z to=2025-10-30T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:11.204143Z","level":"info","event":"   • Trang 1: nhận 99 bài, thêm mới 99, totalResults=1440","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:11.299315Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/newsapi/date=2025-10-30/ts_20251106T151111Z.json (90608 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:12.299833Z","level":"info","event":"--> 2025-10-29 (VN time) | from=2025-10-28T17:00:00Z to=2025-10-29T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:13.475822Z","level":"info","event":"   • Trang 1: nhận 100 bài, thêm mới 100, totalResults=1099","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:14.780632Z","level":"info","event":"   ✗ Lỗi API: You have requested too many results. Developer accounts are limited to a max of 100 results. You are trying to request results 100 to 200. Please upgrade to a paid plan if you need more results.","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:14.930793Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/newsapi/date=2025-10-29/ts_20251106T151114Z.json (92020 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:15.931290Z","level":"info","event":"--> 2025-10-28 (VN time) | from=2025-10-27T17:00:00Z to=2025-10-28T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:17.121995Z","level":"info","event":"   • Trang 1: nhận 98 bài, thêm mới 98, totalResults=1021","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:17.205947Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/newsapi/date=2025-10-28/ts_20251106T151117Z.json (89115 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:18.218589Z","level":"info","event":"--> 2025-10-27 (VN time) | from=2025-10-26T17:00:00Z to=2025-10-27T16:59:59.999000Z","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:26.690775Z","level":"info","event":"   • Trang 1: nhận 98 bài, thêm mới 98, totalResults=995","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:26.767062Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/newsapi/date=2025-10-27/ts_20251106T151126Z.json (88889 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:27.767360Z","level":"info","event":"✅ Done. Tổng số bài: 983","logger":"task.stdout"}
+{"timestamp":"2025-11-06T15:11:27.768610Z","level":"info","event":"Done. Returned value was: 983","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2025-11-06T15:11:27.768972Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019a59b8-6a00-7474-a3a8-7cd463001b10'), task_id='collect_finance_news_to_minio', dag_id='newsapi_finance_pipeline', run_id='manual__2025-11-06T15:10:49.332146+00:00', try_number=1, dag_version_id=UUID('019a59b8-2586-7902-b66c-3be23cc7bc73'), map_index=-1, hostname='5e12fe44da57', context_carrier={}, task=<Task(PythonOperator): collect_finance_news_to_minio>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=0, start_date=datetime.datetime(2025, 11, 6, 15, 10, 54, 124652, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1352}

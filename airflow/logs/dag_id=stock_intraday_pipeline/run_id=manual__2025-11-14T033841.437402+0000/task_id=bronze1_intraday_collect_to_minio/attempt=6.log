@@ -1,0 +1,17 @@
+{"timestamp":"2025-11-14T03:40:33.006794Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-14T03:40:33.008538Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-14T03:40:33.668183Z","level":"info","event":"Collector start | interval=5min | batches=3","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:40:33.668770Z","level":"info","event":"Batch 1/3: ['AAPL', 'MSFT']","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:40:35.187345Z","level":"info","event":"AAPL: no data ({'Information': 'We have detected your API key as UIHZYFBBM6NVWK4Z and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.'})","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:40:35.187873Z","level":"info","event":"AAPL: 0 record → skip","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:40:58.447622Z","level":"info","event":"MSFT: no data ({'Information': 'We have detected your API key as UIHZYFBBM6NVWK4Z and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.'})","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:40:58.448755Z","level":"info","event":"MSFT: 0 record → skip","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:42:29.448353Z","level":"info","event":"Batch 2/3: ['IBM', 'GOOGL']","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:42:29.714107Z","level":"info","event":"IBM: no data ({'Information': 'We have detected your API key as UIHZYFBBM6NVWK4Z and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.'})","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:42:29.714523Z","level":"info","event":"IBM: 0 record → skip","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:43:56.803963Z","level":"info","event":"GOOGL: no data ({'Information': 'We have detected your API key as UIHZYFBBM6NVWK4Z and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.'})","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:43:56.804434Z","level":"info","event":"GOOGL: 0 record → skip","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:44:23.969784Z","level":"info","event":"Batch 3/3: ['AMZN']","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:44:24.231984Z","level":"info","event":"AMZN: no data ({'Information': 'We have detected your API key as UIHZYFBBM6NVWK4Z and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.'})","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:44:24.232386Z","level":"info","event":"AMZN: 0 record → skip","logger":"task.stdout"}
+{"timestamp":"2025-11-14T03:44:46.229608Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

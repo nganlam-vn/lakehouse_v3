@@ -1,0 +1,14 @@
+{"timestamp":"2025-11-06T18:18:19.487410Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-06T18:18:19.488948Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-06T18:18:21.334464Z","level":"info","event":"🚀 Start AV collector | symbols=['AAPL', 'MSFT', 'IBM', 'GOOGL', 'AMZN'] | interval=5min | batches=3","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:18:21.336238Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:18:21.336754Z","level":"info","event":"🔹 Batch 1/3: ['AAPL', 'MSFT']","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:18:24.190235Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/stocks_intraday/symbol=AAPL/ts_20251106T181823Z.json  (659975 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:18:24.190928Z","level":"info","event":"✅ AAPL: uploaded 4224 records","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:18:24.191253Z","level":"info","event":"⏳ sleep 25s between symbols…","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:19:49.259374Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/stocks_intraday/symbol=MSFT/ts_20251106T181949Z.json  (657892 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:19:49.259942Z","level":"info","event":"✅ MSFT: uploaded 4224 records","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:19:49.260197Z","level":"info","event":"⏳ sleep 25s between symbols…","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:19:16.072123Z","level":"info","event":"⏳ Sleep 70s between batches…","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:20:26.088235Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-06T18:20:26.089385Z","level":"info","event":"🔹 Batch 2/3: ['IBM', 'GOOGL']","logger":"task.stdout"}
