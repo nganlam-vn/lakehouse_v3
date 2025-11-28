@@ -1,7 +1,9 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import pendulum
 from airflow import DAG
 from airflow.providers.standard.operators.bash import BashOperator
+from tasks.ingestion.coin_collector import main as collect_coin_data
+from airflow.providers.standard.operators.python import PythonOperator
 
 # timezone theo máy bạn (HCM)
 TZ = pendulum.timezone("Asia/Ho_Chi_Minh")
@@ -12,7 +14,7 @@ DEFAULT_ARGS = {
 }
 
 with DAG(
-    dag_id="delta_job_dag_2",
+    dag_id="official_coin_to_delta_dag",
     description="Run a simple Delta Lake job in delta-spark container (local Spark)",
     start_date=datetime(2024, 1, 1, tzinfo=TZ),
     schedule=None,              # chạy thủ công; muốn cron thì sửa thành "0 * * * *" v.v.
@@ -21,17 +23,11 @@ with DAG(
     tags=["delta", "spark", "minio"],
 ) as dag:
 
-    # 1) Kiểm tra container delta-spark và phiên bản spark
-    spark_version = BashOperator(
-        task_id="spark_version",
-        bash_command=(
-            'docker exec delta-spark bash -lc "python3 -c \\"import pyspark; '
-            'print(pyspark.__version__)\\" && pyspark --version"'
-        ),
-    )
+    collect_data_task = PythonOperator(
+        task_id='collect_coin_data',
+        python_callable=collect_coin_data,
 
-    # 2) Chạy script PySpark ghi/đọc Delta trên MinIO
-    #    Lưu ý: script nằm ở ./spark/jobs/delta_quickstart.py và đã được mount vào /opt/jobs
+    )
     run_delta_job = BashOperator(
         task_id="run_delta_job",
         bash_command=(
@@ -44,12 +40,13 @@ with DAG(
             '--conf spark.hadoop.fs.s3a.path.style.access=true '
             '--conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem '
             '--conf spark.hadoop.fs.s3a.connection.ssl.enabled=false '
+            '--conf spark.sql.warehouse.dir=s3a://warehouse/ '
             '--conf spark.sql.catalogImplementation=hive '
             '--conf spark.hadoop.hive.metastore.uris=thrift://hive-metastore:9083 '
             '--conf spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension '
             '--conf spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog '
-            '/opt/jobs/delta_quickstart.py"'
+            '/opt/jobs/coin_to_delta_w_cp.py"'
         ),
     )
 
-    spark_version >> run_delta_job
+    collect_data_task >> run_delta_job
