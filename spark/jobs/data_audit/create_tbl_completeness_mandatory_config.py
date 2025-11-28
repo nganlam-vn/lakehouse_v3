@@ -1,6 +1,4 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.types import StructType, StructField, StringType, BooleanType, FloatType, TimestampType
-from datetime import datetime
 
 BUCKET = "warehouse"
 DATAAUDIT_PREFIX = "dataaudit/mandatory_column_configuration"
@@ -11,6 +9,7 @@ def create_mandatory_column_configuration_table(spark: SparkSession):
     try:
         spark.sql(f"""
         CREATE TABLE IF NOT EXISTS dataaudit.mandatory_column_configuration(
+            cd_id_configuration BIGINT,
             ds_catalog_name STRING,
             ds_schema_name STRING,
             ds_table_name STRING,
@@ -31,8 +30,16 @@ def create_mandatory_column_configuration_table(spark: SparkSession):
 
 
 def main():
-    spark = SparkSession.builder.appName("CreateMandatoryColumnConfigurationTable").getOrCreate()
+    spark = SparkSession.builder.appName("CreateMandatoryColumnConfigurationTable").getOrCreate() 
+    
     create_mandatory_column_configuration_table(spark)
+
+    print("=== Verify table registered in Hive Metastore ===")
+    spark.sql("SHOW TABLES IN dataaudit").show()
+
+    print("=== Read table content ===")
+    spark.sql("SELECT * FROM dataaudit.mandatory_column_configuration").show()
+
     spark.stop()
 
 if __name__ == "__main__":

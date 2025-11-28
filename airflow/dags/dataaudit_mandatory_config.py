@@ -12,7 +12,7 @@ DEFAULT_ARGS = {
 }
 
 with DAG(
-    dag_id="dataaudit_mandatory_config",
+    dag_id="dataaudit_completeness_mandatory_config",
     description="Configure mandatory columns for data audit completeness checks",
     start_date=datetime(2024, 1, 1, tzinfo=TZ),
     schedule=None,           
@@ -63,4 +63,4 @@ with DAG(
         ),
     )
 
-    create_config_table >> insert_config_data
+    create_config_table  >> insert_config_data
