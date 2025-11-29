@@ -11,7 +11,6 @@ def create_fact_table(spark: SparkSession):
     spark.sql("CREATE DATABASE IF NOT EXISTS dataaudit")
     
     try:
-        # ✅ FIXED: Removed GENERATED IDENTITY, DEFAULT, PRIMARY KEY
         spark.sql(f"""
         CREATE TABLE IF NOT EXISTS dataaudit.fact_dataaudit_completeness_mandatory_column (
             cd_fact_dataaudit_completeness_mandatory_column BIGINT,
@@ -35,9 +34,9 @@ def create_fact_table(spark: SparkSession):
         USING DELTA
         LOCATION 's3a://{BUCKET}/{FACT_PREFIX}'
         """)
-        print("✅ Table created successfully!")
+        print("Table created successfully!")
     except Exception as e:
-        print(f"❌ Error creating table: {e}")
+        print(f"Error creating table: {e}")
         raise
 
 
@@ -47,15 +46,14 @@ def transform_to_fact_table(spark: SparkSession):
     """
     print("\n=== Starting transformation ===")
     
-    # ✅ Get max ID for auto-increment
+    # Get max ID for auto-increment
     max_id = spark.sql("""
         SELECT COALESCE(MAX(cd_fact_dataaudit_completeness_mandatory_column), 0) AS max_id
         FROM dataaudit.fact_dataaudit_completeness_mandatory_column
     """).first()["max_id"]
     
     print(f"📊 Current max ID: {max_id}")
-    
-    # ✅ FIXED: Updated table references and removed unsupported syntax
+  
     spark.sql(f"""
         WITH latest_fact AS (
             SELECT COALESCE(MAX(dt_checked_at), TIMESTAMP('2025-11-03 03:26:00')) AS max_checked_at

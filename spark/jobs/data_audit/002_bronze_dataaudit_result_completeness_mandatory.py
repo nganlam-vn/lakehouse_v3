@@ -39,7 +39,7 @@ def save_audit_results(spark: SparkSession, result_records):
     # Create DataFrame from records
     df = spark.createDataFrame(result_records, schema=schema)
     
-    # ✅ Add UUID (unique for each row)
+    # Add UUID (unique for each row)
     df = df.withColumn("cd_dataaudit_result", expr("uuid()"))
 
     df = df.withColumn("dt_checked_at", expr("current_timestamp()"))

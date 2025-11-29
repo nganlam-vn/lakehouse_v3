@@ -159,7 +159,7 @@ def spark_df_to_html_file(df, filepath):
         </style>
     </head>
     <body>
-        <h1>⚠️ Data Quality Audit Report</h1>
+        <h1>Data Quality Audit Report</h1>
         
         <div class="info">
             <strong>Report Details:</strong><br>
