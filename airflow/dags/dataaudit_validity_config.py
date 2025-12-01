@@ -1,35 +1,27 @@
-from datetime import datetime, timedelta
+from datetime import datetime
 import pendulum
 from airflow import DAG
 from airflow.providers.standard.operators.bash import BashOperator
-from tasks.ingestion.coin_collector import main as collect_coin_data
-from airflow.providers.standard.operators.python import PythonOperator
 
-# timezone theo máy bạn (HCM)
+
 TZ = pendulum.timezone("Asia/Ho_Chi_Minh")
 
 DEFAULT_ARGS = {
     "owner": "airflow",
     "retries": 0,
 }
-
 with DAG(
-    dag_id="official_coin_to_delta_dag",
-    description="Run a simple Delta Lake job in delta-spark container (local Spark)",
+    dag_id= "dataaudit_validity_config",
+    description="Configure validity for data audit",
     start_date=datetime(2024, 1, 1, tzinfo=TZ),
-    schedule=None,              # chạy thủ công; muốn cron thì sửa thành "0 * * * *" v.v.
+    schedule=None,           
     catchup=False,
     default_args=DEFAULT_ARGS,
-    tags=["ingestion", "coinmarketcap", "delta"],
+    tags=["dataaudit", "configuration"],
 ) as dag:
-
-    collect_data_task = PythonOperator(
-        task_id='collect_coin_data',
-        python_callable=collect_coin_data,
-
-    )
-    run_delta_job = BashOperator(
-        task_id="run_delta_job",
+    
+    validity_config = BashOperator(
+        task_id="validity_configuration",
         bash_command=(
             'docker exec delta-spark bash -lc '
             '"spark-submit --master local[*] '
@@ -45,8 +37,6 @@ with DAG(
             '--conf spark.hadoop.hive.metastore.uris=thrift://hive-metastore:9083 '
             '--conf spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension '
             '--conf spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog '
-            '/opt/jobs/coin_to_delta_w_cp.py"'
+            '/opt/jobs/data_audit/configuration/validity_config.py"'
         ),
     )
-
-    collect_data_task >> run_delta_job
