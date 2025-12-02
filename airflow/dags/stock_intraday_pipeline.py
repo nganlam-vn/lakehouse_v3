@@ -1,28 +1,35 @@
-from datetime import datetime
-import pendulum
 from airflow import DAG
+from airflow.providers.standard.operators.python import PythonOperator
 from airflow.providers.standard.operators.bash import BashOperator
+from datetime import datetime, timedelta
 
+from tasks.ingestion.stock_intraday_collector import run_ingest_pipeline as collect_intraday
 
-TZ = pendulum.timezone("Asia/Ho_Chi_Minh")
-
-DEFAULT_ARGS = {
+default_args = {
     "owner": "airflow",
-    "retries": 0,
+    "retries": 5,                           # Thử lại 5 lần nếu lỗi
+    "retry_delay": timedelta(minutes=1),     # Mỗi lần cách nhau 1 phút
+    "depends_on_past": False,
 }
 
 with DAG(
-    dag_id="dataaudit_completeness_mandatory_config",
-    description="Configure mandatory columns for data audit completeness checks",
-    start_date=datetime(2024, 1, 1, tzinfo=TZ),
-    schedule=None,           
+    dag_id="stock_intraday_pipeline",
+    default_args=default_args,
+    #schedule="0 16,20,0,4,7 * * *",
+    start_date=datetime(2025, 11, 12),
     catchup=False,
-    default_args=DEFAULT_ARGS,
-    tags=["dataaudit", "configuration"],
+    tags=["stocks", "alphavantage", "ingestion", "delta", "silver"],
 ) as dag:
-    
-    create_config_table = BashOperator(
-        task_id="create_tbl_completeness_mandatory_config",
+
+
+    bronze1_collect_task = PythonOperator(
+        task_id="bronze1_intraday_collect_to_minio",
+        python_callable=collect_intraday,
+        op_kwargs={},
+    )
+
+    bronze2_convert_task = BashOperator(
+        task_id="bronze2_convert_task",
         bash_command=(
             'docker exec delta-spark bash -lc '
             '"spark-submit --master local[*] '
@@ -33,17 +40,16 @@ with DAG(
             '--conf spark.hadoop.fs.s3a.path.style.access=true '
             '--conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem '
             '--conf spark.hadoop.fs.s3a.connection.ssl.enabled=false '
-            '--conf spark.sql.warehouse.dir=s3a://warehouse/ '
             '--conf spark.sql.catalogImplementation=hive '
             '--conf spark.hadoop.hive.metastore.uris=thrift://hive-metastore:9083 '
             '--conf spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension '
             '--conf spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog '
-            '/opt/jobs/data_audit/configuration/create_tbl_completeness_mandatory_config.py"'
+            '/opt/jobs/alphavantage/transform_into_delta.py"'
         ),
     )
 
-    insert_config_data = BashOperator(
-        task_id="insert_completeness_mandatory_config",
+    silver_transform_task = BashOperator(
+        task_id="silver_transform_task",
         bash_command=(
             'docker exec delta-spark bash -lc '
             '"spark-submit --master local[*] '
@@ -54,13 +60,12 @@ with DAG(
             '--conf spark.hadoop.fs.s3a.path.style.access=true '
             '--conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem '
             '--conf spark.hadoop.fs.s3a.connection.ssl.enabled=false '
-            '--conf spark.sql.warehouse.dir=s3a://warehouse/ '
             '--conf spark.sql.catalogImplementation=hive '
             '--conf spark.hadoop.hive.metastore.uris=thrift://hive-metastore:9083 '
             '--conf spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension '
             '--conf spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog '
-            '/opt/jobs/data_audit/configuration/insert_completeness_mandatory_config.py"'
+            '/opt/jobs/alphavantage/bronze2_to_silver.py"'
         ),
     )
 
-    create_config_table  >> insert_config_data
+    bronze1_collect_task >> bronze2_convert_task >> silver_transform_task

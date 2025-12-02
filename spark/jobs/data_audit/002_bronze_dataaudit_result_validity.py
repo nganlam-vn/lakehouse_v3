@@ -8,7 +8,7 @@ import json
 from functools import reduce
 
 BUCKET = "warehouse"
-DATAAUDIT_PREFIX = "dataaudit/mandatory_column_configuration"
+DATAAUDIT_PREFIX = "dataaudit/validity_configuration"
 RESULTS_PATH = f"s3a://{BUCKET}/dataaudit/bronze_dataaudit_result" 
 TABLE_PATH = f"s3a://{BUCKET}/{DATAAUDIT_PREFIX}"
 now = datetime.now(timezone.utc)
@@ -65,7 +65,7 @@ def save_audit_results(spark: SparkSession, result_records):
     print(f"✅ Results saved to: {RESULTS_PATH}")
 
 
-def completeness_mandatory_column_audit(spark: SparkSession):
+def validity_audit(spark: SparkSession):
     df_config = spark.read.format("delta").load(TABLE_PATH)
     for row in df_config.collect():
         if row["fl_is_active"] == True:
@@ -73,13 +73,7 @@ def completeness_mandatory_column_audit(spark: SparkSession):
             id_configuration = row["cd_id_configuration"]
             schema_name = row["ds_schema_name"]
             table_name = row["ds_table_name"]
-            mandatory_column_array = row["ds_mandatory_column_array"] or ""
-            mandatory_columns = [
-                c.strip()
-                for c in mandatory_column_array.split(",")
-                if c and c.strip()
-            ]
-            additional_filter_condition = row["ds_additional_filter_condition"] or ""
+            validation_rule = row["ds_validation_rule"]
             nr_timezone = row["nr_timezone"]
             utc_timestamp_column = row["ds_utc_timestamp_column"] 
             pk_column_array = row["ds_PK_column_array"] or ""
@@ -94,14 +88,13 @@ def completeness_mandatory_column_audit(spark: SparkSession):
 
                 def json_result(compact_pk, total_pk, status, note):
                     ds_configuration = json.dumps({
-                        "dimension": "completeness_mandatory_column",
+                        "dimension": "validity",
                         "schema_name": schema_name,
                         "table_name": table_name,
                         "id_configuration": id_configuration,
                         "timestamp_utc_column": utc_timestamp_column ,
-                        "mandatory_column_array": mandatory_columns,
                         "dbx_pk": pk_columns ,
-                        "additional_filter_condition": additional_filter_condition ,
+                        "validation_rule": validation_rule,
                         "rule_description": rule_description 
                 })
                                         
@@ -118,35 +111,24 @@ def completeness_mandatory_column_audit(spark: SparkSession):
                     })  
             
                 #declare query
-                if additional_filter_condition:
-                    select_query =f""" SELECT {pk_column_array}
-                    FROM {schema_name}.{table_name}
-                    WHERE {additional_filter_condition}
-                    AND {utc_timestamp_column} >= '{start_timestamp}' 
-                    AND {utc_timestamp_column} < '{end_timestamp}'
-                """
-                else:
+                if validation_rule and validation_rule.strip() != "":
                     select_query =f""" SELECT {pk_column_array}
                     FROM {schema_name}.{table_name}
                     WHERE {utc_timestamp_column} >= '{start_timestamp}' 
-                    AND {utc_timestamp_column} < '{end_timestamp}'"""
+                    AND {utc_timestamp_column} < '{end_timestamp}'
+                    AND {validation_rule}
+                """
+                else:
+                    print(f"No validation rule defined for id_configuration {id_configuration}. Skipping audit.")
+                    break
 
                 final_query = f"""{select_query}"""
 
                 df_result = spark.sql(final_query)
-
-                if mandatory_columns:
-                    condition_violation = reduce(
-                        lambda a, b: a | b,
-                         [(F.col(c).isNull() | (F.trim(F.col(c)) == "")) for c in mandatory_columns]
-                    )
-                else:
-                    json_result(compact_pk = [], total_pk = 0, status = -1, note = "ERROR! No mandatory columns defined")
-                    print(f"No mandatory columns defined for table {table_name}. Skipping audit.")
-                    continue
+                print(f"\nSuccess Executed:\n{final_query}")
 
                 #apply filter and get PK
-                agg_pk = df_result.filter(condition_violation).agg(
+                agg_pk = df_result.agg(
                     F.collect_list(F.struct(*pk_columns)).alias("compact_pk"),
                     F.count("*").alias("count_pk")
                 ).first()
@@ -174,8 +156,8 @@ def completeness_mandatory_column_audit(spark: SparkSession):
 
 
 def main():
-    spark = SparkSession.builder.appName("InsertMandatoryColumnConfiguration").getOrCreate()
-    completeness_mandatory_column_audit(spark)
+    spark = SparkSession.builder.appName("ValidityAudit").getOrCreate()
+    validity_audit(spark)
     spark.stop()
 
 

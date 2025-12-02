@@ -7,208 +7,212 @@ from email import encoders
 from datetime import datetime
 import os
 
+from email_html_generator import (
+    generate_email_body_html,
+    generate_file_html,
+    generate_config_section_html,
+    escape_html
+)
 
-def source_to_send(spark: SparkSession):
+
+def get_failed_audits_by_dimension(spark: SparkSession, dimension: str, table_name: str):
     """
-    Extract failed audit records from fact table for alerting
+    Generic function to extract failed audit records for any dimension
+    Handles different schemas for different dimensions
     """
-    df_mandatory = spark.sql("""
+    # Base columns that exist in all fact tables
+    base_query = f"""
         SELECT
+            nr_id_configuration AS `ID Configuration`,
             CASE
                 WHEN ds_dimension = 'completeness_mandatory_column' THEN 'Completeness-Mandatory Columns'
+                WHEN ds_dimension = 'validity' THEN 'Validity'
+                WHEN ds_dimension = 'integrity' THEN 'Referential Integrity'
+                WHEN ds_dimension = 'timeliness' THEN 'Timeliness'
                 ELSE ds_dimension
             END AS `Dimension`,
             ds_rule_description AS `Audit Rule Description`,
+            ds_table AS `Table`,
+            ds_schema AS `Schema`,
+    """
+    
+    # Dimension-specific columns
+    if dimension == 'completeness_mandatory_column':
+        specific_cols = """
+            ds_mandatory_column_array AS `Mandatory Columns`,
             ds_violated_records AS `Violated Record`,
             nr_total_violated_records AS `Total Violated Records`,
             ds_audit_result AS `Result`,
-            ds_table AS `Table`,
-            ds_schema AS `Schema`,
             dt_checked_at AS `Checked At`,
-            ds_mandatory_column_array AS `Mandatory Columns`,
             ds_additional_filter_condition AS `Additional Filter`,
             ds_pk AS `Primary Key Columns`,
             ds_timestamp_utc_column AS `Timestamp Column`,
-            nr_id_configuration AS `ID Configuration`,
             ds_note AS `Note`,
             cd_fact_dataaudit_completeness_mandatory_column AS `Fact Table PK`
-        FROM dataaudit.fact_dataaudit_completeness_mandatory_column
+        """
+    elif dimension == 'validity':
+        specific_cols = """
+            ds_validation_rule AS `Validation Rule`,
+            ds_violated_records AS `Violated Record`,
+            nr_total_violated_records AS `Total Violated Records`,
+            ds_audit_result AS `Result`,
+            dt_checked_at AS `Checked At`,
+            ds_pk AS `Primary Key Columns`,
+            ds_timestamp_utc_column AS `Timestamp Column`,
+            ds_note AS `Note`,
+            cd_fact_dataaudit_validity AS `Fact Table PK`
+        """
+    else:
+        # Fallback for unknown dimensions
+        specific_cols = """
+            ds_violated_records AS `Violated Record`,
+            nr_total_violated_records AS `Total Violated Records`,
+            ds_audit_result AS `Result`,
+            dt_checked_at AS `Checked At`,
+            ds_note AS `Note`,
+            'unknown' AS `Fact Table PK`
+        """
+    
+    full_query = base_query + specific_cols + f"""
+        FROM dataaudit.{table_name}
         WHERE ds_audit_result != 'PASS'
           AND dt_checked_at = (
               SELECT MAX(dt_checked_at) 
-              FROM dataaudit.fact_dataaudit_completeness_mandatory_column
+              FROM dataaudit.{table_name}
           )
-        ORDER BY ds_violated_records
-    """)
+        ORDER BY nr_id_configuration
+    """
     
-    print(f"📊 Extracted {df_mandatory.count()} failed audit records")
+    df = spark.sql(full_query)
     
-    if df_mandatory.count() > 0:
-        print("\n=== Sample Failed Audits ===")
-        df_mandatory.show(5, truncate=False)
-    else:
-        print("✅ No failed audits found!")
+    count = df.count()
+    print(f"📊 [{dimension}] Extracted {count} failed audit records")
     
-    return df_mandatory
+    if count > 0:
+        print(f"\n=== [{dimension}] Sample Failed Audits ===")
+        df.show(5, truncate=False)
+    
+    return df
 
 
-def spark_df_to_html_table(df, limit=None):
+def combine_dataframes(dfs_dict):
     """
-    Convert Spark DataFrame to HTML table (for email body)
+    Combine multiple dimension DataFrames into one
     """
-    columns = df.columns
+    non_empty_dfs = [(name, df) for name, df in dfs_dict.items() if df.count() > 0]
     
-    # Limit records if specified
-    if limit:
-        rows = df.limit(limit).collect()
-    else:
-        rows = df.collect()
+    if not non_empty_dfs:
+        return None
     
-    # Build HTML table
-    html = '<table class="audit-table">\n'
+    print("\n📦 Combining DataFrames:")
+    for name, df in non_empty_dfs:
+        print(f"  - {name}: {df.count()} records")
     
-    # Header
-    html += '  <thead>\n    <tr>\n'
-    for col in columns:
-        html += f'      <th>{col}</th>\n'
-    html += '    </tr>\n  </thead>\n'
+    # Union with allowMissingColumns to handle different schemas
+    combined_df = non_empty_dfs[0][1]
+    for name, df in non_empty_dfs[1:]:
+        combined_df = combined_df.unionByName(df, allowMissingColumns=True)
     
-    # Body
-    html += '  <tbody>\n'
-    for row in rows:
-        html += '    <tr>\n'
-        for col in columns:
-            value = row[col]
-            display_value = '' if value is None else str(value)
-            # Escape HTML
-            display_value = display_value.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-            html += f'      <td>{display_value}</td>\n'
-        html += '    </tr>\n'
-    html += '  </tbody>\n'
+    combined_df = combined_df.orderBy("`ID Configuration`", "`Dimension`")
     
-    html += '</table>'
+    print(f"✅ Combined total: {combined_df.count()} records")
+    return combined_df
+
+
+def spark_df_to_html_table_grouped(df):
+    """
+    Convert Spark DataFrame to HTML table grouped by ID Configuration
+    Shows max 5 rows per configuration in email body
+    """
+    from pyspark.sql.functions import row_number, coalesce, lit
+    from pyspark.sql import Window
+    
+    # Handle missing Fact Table PK column
+    if "`Fact Table PK`" not in df.columns:
+        df = df.withColumn("`Fact Table PK`", lit(None))
+    
+    window = Window.partitionBy("`ID Configuration`").orderBy(
+        coalesce("`Fact Table PK`", lit(0)).cast("long")
+    )
+    df_numbered = df.withColumn("row_num", row_number().over(window))
+    
+    id_configs = [row[0] for row in df.select("`ID Configuration`").distinct().orderBy("`ID Configuration`").collect()]
+    
+    html = ""
+    
+    for id_config in id_configs:
+        df_config = df_numbered.filter(f"`ID Configuration` = {id_config}")
+        total_count = df_config.count()
+        
+        df_config_limited = df_config.filter("row_num <= 5").drop("row_num")
+        rows = df_config_limited.collect()
+        columns = df_config_limited.columns
+        
+        first_row = rows[0] if rows else None
+        
+        # Skip metadata columns
+        skip_cols = ['ID Configuration', 'Audit Rule Description', 'Schema', 'Table']
+        display_cols = [c for c in columns if c not in skip_cols and c != 'row_num']
+        
+        # ✅ Use HTML generator
+        html += generate_config_section_html(
+            id_config=id_config,
+            dimension=first_row['Dimension'],
+            schema=first_row['Schema'],
+            table=first_row['Table'],
+            rule=first_row['Audit Rule Description'],
+            total_violations=total_count,
+            columns=display_cols,
+            rows=rows,
+            is_preview=True
+        )
     
     return html
 
 
 def spark_df_to_html_file(df, filepath):
     """
-    Save complete Spark DataFrame as a standalone HTML file
+    Save complete Spark DataFrame as a standalone HTML file (all records)
     """
-    columns = df.columns
-    rows = df.collect()
-    total_records = len(rows)
+    from pyspark.sql.functions import lit
     
-    # Build complete HTML document
-    html = """
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Data Quality Audit Report</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 20px;
-                background-color: #f5f5f5;
-            }
-            h1 {
-                color: #d9534f;
-                text-align: center;
-            }
-            .info {
-                background-color: #fff;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                padding: 15px;
-                margin-bottom: 20px;
-            }
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                background-color: white;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            }
-            th {
-                background-color: #5bc0de;
-                color: white;
-                padding: 12px;
-                text-align: left;
-                font-weight: bold;
-                position: sticky;
-                top: 0;
-                z-index: 10;
-            }
-            td {
-                border: 1px solid #ddd;
-                padding: 10px;
-                word-wrap: break-word;
-            }
-            tr:nth-child(even) {
-                background-color: #f9f9f9;
-            }
-            tr:hover {
-                background-color: #e9ecef;
-            }
-            .footer {
-                margin-top: 20px;
-                text-align: center;
-                font-size: 12px;
-                color: #6c757d;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>⚠️ Data Quality Audit Report</h1>
+    # Handle missing Fact Table PK column
+    if "`Fact Table PK`" not in df.columns:
+        df = df.withColumn("`Fact Table PK`", lit(None))
+    
+    id_configs = [row[0] for row in df.select("`ID Configuration`").distinct().orderBy("`ID Configuration`").collect()]
+    
+    total_records = df.count()
+    
+    # Generate all config sections
+    sections_html = ""
+    
+    for id_config in id_configs:
+        df_config = df.filter(f"`ID Configuration` = {id_config}")
+        rows = df_config.collect()
+        columns = df_config.columns
         
-        <div class="info">
-            <strong>Report Details:</strong><br>
-            <ul>
-                <li><strong>Total Failed Audits:</strong> """ + str(total_records) + """</li>
-                <li><strong>Generated:</strong> """ + datetime.now().strftime('%Y-%m-%d %H:%M:%S') + """</li>
-                <li><strong>Source:</strong> dataaudit.fact_dataaudit_completeness_mandatory_column</li>
-            </ul>
-        </div>
+        first_row = rows[0]
         
-        <table>
-            <thead>
-                <tr>
-    """
+        # ✅ Use HTML generator
+        sections_html += generate_config_section_html(
+            id_config=id_config,
+            dimension=first_row['Dimension'],
+            schema=first_row['Schema'],
+            table=first_row['Table'],
+            rule=first_row['Audit Rule Description'],
+            total_violations=len(rows),
+            columns=columns,
+            rows=rows,
+            is_preview=False
+        )
     
-    # Add headers
-    for col in columns:
-        html += f'                    <th>{col}</th>\n'
-    
-    html += """
-                </tr>
-            </thead>
-            <tbody>
-    """
-    
-    # Add all rows
-    for row in rows:
-        html += '                <tr>\n'
-        for col in columns:
-            value = row[col]
-            display_value = '' if value is None else str(value)
-            # Escape HTML characters
-            display_value = display_value.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-            html += f'                    <td>{display_value}</td>\n'
-        html += '                </tr>\n'
-    
-    html += """
-            </tbody>
-        </table>
-        
-        <div class="footer">
-            <p>This is an automated report from the Data Quality Monitoring System.</p>
-            <p>For questions, please contact the Data Engineering team.</p>
-            <p>Lam Hoai Kim Ngan: lamhoaikimngan@gmail.com</p>
-            <p>Le Hoang Anh Duy: anhduy0969@gmail.com</p>
-        </div>
-    </body>
-    </html>
-    """
+    # ✅ Generate complete file HTML
+    html = generate_file_html(
+        total_records=total_records,
+        config_count=len(id_configs),
+        id_configs_sections=sections_html
+    )
     
     # Write to file
     with open(filepath, 'w', encoding='utf-8') as f:
@@ -219,7 +223,7 @@ def spark_df_to_html_file(df, filepath):
 
 def send_email_with_attachment(df):
     """
-    Send email with top 20 records in body + full HTML file attachment
+    Send email grouped by ID Configuration (max 5 rows per config) + full HTML attachment
     """
     sender_email = "watanabilinlin@gmail.com"
     app_password = "hrlm tsoh tkfc elxj"
@@ -239,96 +243,24 @@ def send_email_with_attachment(df):
     
     spark_df_to_html_file(df, html_filepath)
     
+    # Count unique configurations and dimensions
+    config_count = df.select("`ID Configuration`").distinct().count()
+    dimension_count = df.select("`Dimension`").distinct().count()
+    
     # Create email subject
-    subject = f" Data Quality Alert - {record_count} Failed Audit(s) - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+    subject = f"⚠️ Data Quality Alert - {config_count} Config(s), {dimension_count} Dimension(s), {record_count} Violation(s) - {datetime.now().strftime('%Y-%m-%d %H:%M')}"
     
-    # Create HTML email body with TOP 20 records
-    html_table_preview = spark_df_to_html_table(df, limit=20)
+    # Create HTML email body with grouped data (max 5 per config)
+    html_table_preview = spark_df_to_html_table_grouped(df)
     
-    html_body = f"""
-    <html>
-      <head>
-        <style>
-          body {{
-            font-family: Arial, sans-serif;
-            margin: 20px;
-          }}
-          h2 {{
-            color: #d9534f;
-          }}
-          .summary {{
-            background-color: #f8d7da;
-            border: 1px solid #f5c6cb;
-            border-radius: 4px;
-            padding: 15px;
-            margin-bottom: 20px;
-          }}
-          .audit-table {{
-            border-collapse: collapse;
-            width: 100%;
-            margin-top: 20px;
-          }}
-          .audit-table th {{
-            background-color: #5bc0de;
-            color: white;
-            padding: 12px;
-            text-align: left;
-            font-weight: bold;
-          }}
-          .audit-table td {{
-            border: 1px solid #ddd;
-            padding: 10px;
-          }}
-          .audit-table tr:nth-child(even) {{
-            background-color: #f2f2f2;
-          }}
-          .audit-table tr:hover {{
-            background-color: #e9ecef;
-          }}
-          .notice {{
-            background-color: #fff3cd;
-            border: 1px solid #ffeaa7;
-            border-radius: 4px;
-            padding: 10px;
-            margin: 20px 0;
-            color: #856404;
-          }}
-          .footer {{
-            margin-top: 30px;
-            font-size: 12px;
-            color: #6c757d;
-          }}
-        </style>
-      </head>
-      <body>
-        <h2> Data Quality Alert</h2>
-        
-        <div class="summary">
-          <strong>Summary:</strong><br>
-          <ul>
-            <li><strong>Total Failed Audits:</strong> {record_count}</li>
-            <li><strong>Alert Time:</strong> {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</li>
-            <li><strong>Source:</strong> dataaudit.fact_dataaudit_completeness_mandatory_column</li>
-          </ul>
-        </div>
-        
-        <h3>📊 Preview (Top 20 Records):</h3>
-        {html_table_preview}
-        
-        <div class="notice">
-          <strong>📎 Note:</strong> Showing top 20 records only. 
-          <strong>Please open the attached HTML file ({html_filename}) to view all {record_count} records.</strong>
-        </div>
-        
-        <div class="footer">
-          <p>This is an automated alert from the Data Quality Monitoring System.</p>
-          <p>For questions, please contact the Data Engineering team.</p>
-          <p>Lam Hoai Kim Ngan: lamhoaikimngan@gmail.com</p>
-          <p>Le Hoang Anh Duy: anhduy0969@gmail.com</p>
-        </div>
-      </body>
-    </html>
-    """
+    # ✅ Use HTML generator for email body
+    html_body = generate_email_body_html(
+        html_table_preview=html_table_preview,
+        record_count=record_count,
+        config_count=config_count,
+        dimension_count=dimension_count,
+        html_filename=html_filename
+    )
     
     # Create message
     message = MIMEMultipart("alternative")
@@ -382,13 +314,28 @@ def send_email_with_attachment(df):
 def main():
     spark = SparkSession.builder.appName("SendDataAuditAlert").getOrCreate()
     
-    df = source_to_send(spark)
+    # Define which dimensions to include in alert
+    dfs_to_alert = {
+        "Completeness-Mandatory": get_failed_audits_by_dimension(
+            spark, 
+            "completeness_mandatory_column", 
+            "fact_dataaudit_completeness_mandatory_column"
+        ),
+        "Validity": get_failed_audits_by_dimension(
+            spark,
+            "validity",
+            "fact_dataaudit_validity"
+        ),
+    }
     
-    # Send email with preview + full attachment
-    if df.count() > 0:
-        send_email_with_attachment(df)
+    # Combine all DataFrames
+    combined_df = combine_dataframes(dfs_to_alert)
+    
+    # Send email if there are any failures
+    if combined_df and combined_df.count() > 0:
+        send_email_with_attachment(combined_df)
     else:
-        print("✅ No failed audits - no email sent")
+        print("✅ No failed audits across all dimensions - no email sent")
     
     spark.stop()
 
