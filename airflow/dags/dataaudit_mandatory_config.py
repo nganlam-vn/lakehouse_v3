@@ -18,7 +18,7 @@ with DAG(
     schedule=None,           
     catchup=False,
     default_args=DEFAULT_ARGS,
-    tags=["delta", "spark", "minio"],
+    tags=["dataaudit", "configuration"],
 ) as dag:
     
     create_config_table = BashOperator(
@@ -38,7 +38,7 @@ with DAG(
             '--conf spark.hadoop.hive.metastore.uris=thrift://hive-metastore:9083 '
             '--conf spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension '
             '--conf spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog '
-            '/opt/jobs/data_audit/create_tbl_completeness_mandatory_config.py"'
+            '/opt/jobs/data_audit/configuration/create_tbl_completeness_mandatory_config.py"'
         ),
     )
 
@@ -59,7 +59,7 @@ with DAG(
             '--conf spark.hadoop.hive.metastore.uris=thrift://hive-metastore:9083 '
             '--conf spark.sql.extensions=io.delta.sql.DeltaSparkSessionExtension '
             '--conf spark.sql.catalog.spark_catalog=org.apache.spark.sql.delta.catalog.DeltaCatalog '
-            '/opt/jobs/data_audit/insert_completeness_mandatory_config.py"'
+            '/opt/jobs/data_audit/configuration/insert_completeness_mandatory_config.py"'
         ),
     )
 

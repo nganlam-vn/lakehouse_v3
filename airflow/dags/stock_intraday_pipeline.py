@@ -18,7 +18,7 @@ with DAG(
     #schedule="0 16,20,0,4,7 * * *",
     start_date=datetime(2025, 11, 12),
     catchup=False,
-    tags=["stocks", "alphavantage", "bronze1", "bronze2"],
+    tags=["stocks", "alphavantage", "ingestion", "delta", "silver"],
 ) as dag:
 
 
