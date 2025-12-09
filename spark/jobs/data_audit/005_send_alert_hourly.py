@@ -225,7 +225,7 @@ def send_email_with_attachment(df):
     """
     Send email grouped by ID Configuration (max 5 rows per config) + full HTML attachment
     """
-    sender_email = "watanabilinlin@gmail.com"
+    sender_email = "anhduy0969@gmail.com"
     app_password = "hrlm tsoh tkfc elxj"
     recipient_emails = ["watanabilinlin@gmail.com", "anhduy0969@gmail.com"]
     

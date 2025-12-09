@@ -31,9 +31,9 @@ def main():
             "bronze2",
             "coinmarketcap",
             "max_supply",
-            "cd_bronze2_id,name,symbol",
+            "cd_bronze_id,name,symbol",
             None,
-            "dt_utc_record_to_bronze2",
+            "dt_utc_record_to_bronze",
             7.0,
             "Check if max_supply is NULL for coinmarketcap data",
             True,
@@ -46,74 +46,43 @@ def main():
             "bronze2",
             "coinmarketcap",
             "quote.usd.market_cap_dominance,quote.usd.percent_change_1h,quote.usd.percent_change_24,quote.usd.percent_change_30d,quote.usd.percent_change_60,quote.usd.percent_change_90d,quote.usd.price",
-            "cd_bronze2_id,name,symbol",
+            "cd_bronze_id,name,symbol",
             None,
-            "dt_utc_record_to_bronze2",
+            "dt_utc_record_to_bronze",
             7.0,
             "Check mandatory price fields for coinmarketcap data",
             True,
             datetime.now()
         ),
-        # Stocks Intraday
+        # CoinMarketCap
         (
             3,
             "delta",
             "bronze2",
-            "stocks_intraday",
-            "timestamp",
-            "cd_bronze_id,symbol",
-            None,
-            "timestamp",
-            0.0,
-            "Check if timestamp for stocks is NULL",
-            True,
-            datetime.now()
-        ),
-        # Stocks Intraday
-        (
-            4,
-            "delta",
-            "bronze2",
-            "stocks_intraday",
-            "open,high,low,close,volume",
-            "cd_bronze_id,symbol",
-            None,
-            "timestamp",
-            0.0,
-            "Check if price fields for stock data are NULL",
-            True,
-            datetime.now()
-        ),
-        # Silver Stocks Intraday
-        (
-            5,
-            "delta",
-            "silver",
-            "stocks_intraday",
-            "avg_price",
-            "cd_silver_id,symbol",
-            "date >= '2025-11-01'",
-            "timestamp",
-            0.0,
-            "Check if avg_price is NULL for silver stocks since Nov 2025",
-            True,
-            datetime.now()
-        ),
-        # CoinMarketCap
-        (
-            6,
-            "delta",
-            "bronze2",
             "coinmarketcap",
             "self_reported_circulating_supply,self_reported_market_cap",
-            "cd_bronze2_id,name,symbol",
+            "cd_bronze_id,name,symbol",
             None,
-            "dt_utc_record_to_bronze2",
+            "dt_utc_record_to_bronze",
             7.0,
             "Check mandatory self-reported fields for coinmarketcap data",
             True,
             datetime.now()
-        )
+        ),
+        (
+            4,
+            "delta",
+            "silver",
+            "uber_bookings",
+            "payment_method",
+            "cd_silver_id,booking_id",
+            None,
+            "time",
+            7.0,
+            "Check if payment_method is NULL for uber_bookings data",
+            True,
+            datetime.now()
+        ),
     ]
     
     schema = StructType([
