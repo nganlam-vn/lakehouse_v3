@@ -7,6 +7,12 @@ The architecture follows the **Medallion Model (Bronze → Silver → Gold)** an
 
 ### Data Quality Mangagement Framework
 The Data Quality Management Framework is tightly integrated into the Lakehouse to ensure trusted, reliable data.
+#### Introduction to Project: 
+https://www.youtube.com/watch?v=wdCjT4KPqFs
+#### Project Demo: 
+https://www.youtube.com/watch?v=FE0A83WuH-k
+
+
 
 ---
 ## 🧱 Lakehouse Architecture Summary
