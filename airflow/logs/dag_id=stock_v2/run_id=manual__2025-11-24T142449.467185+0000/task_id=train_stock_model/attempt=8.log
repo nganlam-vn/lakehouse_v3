@@ -1,0 +1,8 @@
+{"timestamp":"2025-11-24T14:59:17.209686Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T14:59:17.217160Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T15:00:50.295525Z","level":"info","event":"Số mẫu huấn luyện: 16085","logger":"task.stdout"}
+{"timestamp":"2025-11-24T15:01:48.135841Z","level":"info","event":"   Epoch   0 | Train Loss: 0.6912 | Val Loss: 0.6920","logger":"task.stdout"}
+{"timestamp":"2025-11-24T15:03:38.029396Z","level":"info","event":"   Epoch  10 | Train Loss: 0.6787 | Val Loss: 0.6985","logger":"task.stdout"}
+{"timestamp":"2025-11-24T15:05:14.825841Z","level":"info","event":"   Epoch  20 | Train Loss: 0.6690 | Val Loss: 0.7364","logger":"task.stdout"}
+{"timestamp":"2025-11-24T15:06:25.980458Z","level":"error","event":"Server indicated the task shouldn't be running anymore. Terminating process","detail":{"detail":{"reason":"not_found","message":"Task Instance not found"}},"logger":"task"}
+{"timestamp":"2025-11-24T15:06:31.091670Z","level":"error","event":"Task killed!","logger":"task"}

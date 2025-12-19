@@ -1,0 +1,47 @@
+{"timestamp":"2025-11-23T10:43:27.507131Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-23T10:43:27.510701Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-23T10:43:36.965468Z","level":"info","event":"Config Loaded: SEQ_LEN=15, N_STEPS=1","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.304874Z","level":"warning","event":"X does not have valid feature names, but MinMaxScaler was fitted with feature names","category":"UserWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py","lineno":2749,"logger":"py.warnings"}
+{"timestamp":"2025-11-23T10:43:39.341361Z","level":"warning","event":"X does not have valid feature names, but MinMaxScaler was fitted with feature names","category":"UserWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py","lineno":2749,"logger":"py.warnings"}
+{"timestamp":"2025-11-23T10:43:39.355821Z","level":"warning","event":"X does not have valid feature names, but MinMaxScaler was fitted with feature names","category":"UserWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py","lineno":2749,"logger":"py.warnings"}
+{"timestamp":"2025-11-23T10:43:39.365338Z","level":"warning","event":"X does not have valid feature names, but MinMaxScaler was fitted with feature names","category":"UserWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py","lineno":2749,"logger":"py.warnings"}
+{"timestamp":"2025-11-23T10:43:39.374005Z","level":"warning","event":"X does not have valid feature names, but MinMaxScaler was fitted with feature names","category":"UserWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py","lineno":2749,"logger":"py.warnings"}
+{"timestamp":"2025-11-23T10:43:39.379767Z","level":"info","event":"KẾT QUẢ DỰ BÁO 1 NGÀY TỚI: {","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.381489Z","level":"info","event":"  \"AAPL\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.382107Z","level":"info","event":"    \"Last_Date\": \"2025-11-19\",","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.382478Z","level":"info","event":"    \"Prediction\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.382966Z","level":"info","event":"      \"Xu_Huong\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.383377Z","level":"info","event":"      \"Xac_Suat_Tang\": \"11.0%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.383592Z","level":"info","event":"    }","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.383852Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.384101Z","level":"info","event":"  \"AMZN\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.384373Z","level":"info","event":"    \"Last_Date\": \"2025-11-19\",","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.384563Z","level":"info","event":"    \"Prediction\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.384858Z","level":"info","event":"      \"Xu_Huong\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.385124Z","level":"info","event":"      \"Xac_Suat_Tang\": \"11.0%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.385384Z","level":"info","event":"    }","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.385634Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.385822Z","level":"info","event":"  \"GOOGL\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.386030Z","level":"info","event":"    \"Last_Date\": \"2025-11-19\",","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.386441Z","level":"info","event":"    \"Prediction\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.388145Z","level":"info","event":"      \"Xu_Huong\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.388445Z","level":"info","event":"      \"Xac_Suat_Tang\": \"11.0%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.388787Z","level":"info","event":"    }","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.389074Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.389368Z","level":"info","event":"  \"META\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.389598Z","level":"info","event":"    \"Last_Date\": \"2025-11-19\",","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.389947Z","level":"info","event":"    \"Prediction\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.390260Z","level":"info","event":"      \"Xu_Huong\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.390501Z","level":"info","event":"      \"Xac_Suat_Tang\": \"11.0%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.390712Z","level":"info","event":"    }","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.390924Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.391199Z","level":"info","event":"  \"MSFT\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.391462Z","level":"info","event":"    \"Last_Date\": \"2025-11-19\",","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.391694Z","level":"info","event":"    \"Prediction\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.391901Z","level":"info","event":"      \"Xu_Huong\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.392195Z","level":"info","event":"      \"Xac_Suat_Tang\": \"11.0%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.392476Z","level":"info","event":"    }","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.392781Z","level":"info","event":"  }","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.393041Z","level":"info","event":"}","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:39.379413Z","level":"info","event":"Done. Returned value was: {'AAPL': {'Last_Date': '2025-11-19', 'Prediction': {'Xu_Huong': 'GIẢM 🔴', 'Xac_Suat_Tang': '11.0%'}}, 'AMZN': {'Last_Date': '2025-11-19', 'Prediction': {'Xu_Huong': 'GIẢM 🔴', 'Xac_Suat_Tang': '11.0%'}}, 'GOOGL': {'Last_Date': '2025-11-19', 'Prediction': {'Xu_Huong': 'GIẢM 🔴', 'Xac_Suat_Tang': '11.0%'}}, 'META': {'Last_Date': '2025-11-19', 'Prediction': {'Xu_Huong': 'GIẢM 🔴', 'Xac_Suat_Tang': '11.0%'}}, 'MSFT': {'Last_Date': '2025-11-19', 'Prediction': {'Xu_Huong': 'GIẢM 🔴', 'Xac_Suat_Tang': '11.0%'}}}","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2025-11-23T10:43:39.379925Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019ab04e-1922-7f37-8ffd-6567ec2c6086'), task_id='silver_intraday_predict_5min', dag_id='stock_v2', run_id='manual__2025-11-23T10:41:39.600271+00:00', try_number=1, dag_version_id=UUID('019ab04f-1a9a-7de7-82fe-6368aa02bae2'), map_index=-1, hostname='aa793659e71a', context_carrier={}, task=<Task(PythonOperator): silver_intraday_predict_5min>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=10, start_date=datetime.datetime(2025, 11, 23, 10, 43, 27, 265765, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1352}

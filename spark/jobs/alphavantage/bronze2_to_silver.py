@@ -1,34 +1,29 @@
-import os
+#bronze2_to_silver.py
 from pyspark.sql import SparkSession, Window
 from pyspark.sql.functions import (
     col, to_timestamp, date_format, hour, current_timestamp,
-    row_number, lit, to_utc_timestamp
+    row_number, lit, to_utc_timestamp, max as spark_max, to_date
 )
 from delta.tables import DeltaTable
 
+# === CẤU HÌNH ===
 MINIO_ENDPOINT = "http://minio:9000"
 MINIO_ACCESS_KEY = "admin"
 MINIO_SECRET_KEY = "password"
 MINIO_SSL = False
 
 BUCKET = "warehouse"
-
-BRONZE_DB = "bronze2"
-BRONZE_TBL = "stocks_intraday"
-
+BRONZE_PATH = f"s3a://{BUCKET}/bronze2/stocks_intraday"
+SILVER_PATH = f"s3a://{BUCKET}/silver/stocks_intraday"
 SILVER_DB = "silver"
 SILVER_TBL = "stocks_intraday"
-SILVER_PATH = f"s3a://{BUCKET}/silver/{SILVER_TBL}"
 
-CTRL_DB = "_control"
-SILVER_CTRL_TBL = "stocks_intraday_silver_log"
-SILVER_CTRL_PATH = f"s3a://{BUCKET}/_control/bronze2_to_silver/{SILVER_CTRL_TBL}"
-
+CHECKPOINT_PATH = f"s3a://{BUCKET}/_checkpoints/bronze2_to_silver"
 
 def build_spark() -> SparkSession:
     return (
         SparkSession.builder
-        .appName("bronze2_to_silver_delta")
+        .appName("bronze2_to_silver_streaming_timestamp_incremental")
         .config("spark.sql.extensions", "io.delta.sql.DeltaSparkSessionExtension")
         .config("spark.sql.catalog.spark_catalog", "org.apache.spark.sql.delta.catalog.DeltaCatalog")
         .config("spark.sql.session.timeZone", "UTC")
@@ -37,49 +32,68 @@ def build_spark() -> SparkSession:
         .config("spark.hadoop.fs.s3a.access.key", MINIO_ACCESS_KEY)
         .config("spark.hadoop.fs.s3a.secret.key", MINIO_SECRET_KEY)
         .config("spark.hadoop.fs.s3a.connection.ssl.enabled", str(MINIO_SSL).lower())
-        .config("spark.sql.sources.partitionOverwriteMode", "DYNAMIC")
+        .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
         .getOrCreate()
     )
 
-
-def ensure_meta(spark: SparkSession):
-    spark.sql(f"CREATE DATABASE IF NOT EXISTS {SILVER_DB}")
-    spark.sql(f"CREATE DATABASE IF NOT EXISTS {CTRL_DB}")
-    if not DeltaTable.isDeltaTable(spark, SILVER_CTRL_PATH):
-        (
-            spark.createDataFrame(
-                [],
-                "run_id STRING, processed_at TIMESTAMP, processed_max_ts STRING"
-            )
-            .write.format("delta").mode("overwrite").save(SILVER_CTRL_PATH)
-        )
-        spark.sql(f"""
-            CREATE TABLE IF NOT EXISTS {CTRL_DB}.{SILVER_CTRL_TBL}
-            USING DELTA
-            LOCATION '{SILVER_CTRL_PATH}'
-        """)
-
-
-def get_max_silver_id(spark: SparkSession) -> int:
+def get_max_silver_timestamp(spark) -> str:
+    """
+    Truy vấn MAX(timestamp) từ bảng Silver.
+    Trả về chuỗi timestamp hoặc None nếu bảng chưa tồn tại/rỗng.
+    """
     try:
-        if not DeltaTable.isDeltaTable(spark, SILVER_PATH):
-            return 0
-        from pyspark.sql.functions import max as fmax
-        m = spark.read.format("delta").load(SILVER_PATH).agg(fmax("cd_silver_id")).collect()[0][0]
-        return int(m) if m is not None else 0
+        if DeltaTable.isDeltaTable(spark, SILVER_PATH):
+            # Đọc bảng Silver để lấy max timestamp
+            max_ts_row = spark.read.format("delta").load(SILVER_PATH).agg(spark_max("timestamp")).collect()[0][0]
+            if max_ts_row:
+                return max_ts_row
+        return None
+    except Exception as e:
+        print(f"⚠️ Warning getting max timestamp: {e}")
+        return None
+
+def get_next_silver_id(spark) -> int:
+    """Lấy Max ID hiện tại trong bảng Silver để tạo ID tiếp theo."""
+    try:
+        if DeltaTable.isDeltaTable(spark, SILVER_PATH):
+            max_id_row = spark.read.format("delta").load(SILVER_PATH).agg(spark_max("cd_silver_id")).collect()[0][0]
+            return int(max_id_row) if max_id_row is not None else 0
+        return 0
     except Exception:
         return 0
 
+def process_batch(batch_df, batch_id):
 
-def transform_and_clean(df_bronze):
-    drop_cols = ["date_ny", "interval", "tz", "_src_path"]
-    existing_drop_cols = [c for c in drop_cols if c in df_bronze.columns]
-    if existing_drop_cols:
-        df_bronze = df_bronze.drop(*existing_drop_cols)
+    spark = batch_df.sparkSession
+    
+    if batch_df.rdd.isEmpty():
+        return
 
-    df_typed = df_bronze.withColumn("timestamp", to_timestamp(col("timestamp"), "yyyy-MM-dd HH:mm:ss"))
+    # 1. Lấy MAX Timestamp từ Silver (Watermark)
+    max_silver_ts = get_max_silver_timestamp(spark)
+    print(f"🔎 Max Silver Timestamp found: {max_silver_ts}")
 
-    df_clean = df_typed.filter(
+    # 2. Clean & Convert Type
+    df_typed = batch_df.withColumn(
+        "timestamp", 
+        to_timestamp(col("timestamp"), "yyyy-MM-dd HH:mm:ss")
+    )
+
+    # 3. Lọc dữ liệu MỚI HƠN max timestamp (Incremental Logic)
+    if max_silver_ts:
+        df_filtered = df_typed.filter(col("timestamp") > lit(max_silver_ts))
+        print(f"   📉 Filtering: Keeping rows with timestamp > {max_silver_ts}")
+    else:
+        # Nếu chưa có dữ liệu trong Silver (Lần chạy đầu), lấy tất cả
+        df_filtered = df_typed
+        print("No existing Silver data. Processing all rows in batch.")
+
+    if df_filtered.rdd.isEmpty():
+        print(" No new data after filtering. Skipping batch.")
+        return
+
+    # 4. Áp dụng các bộ lọc nghiệp vụ (Business Rules)
+    df_clean = df_filtered.filter(
         col("timestamp").isNotNull() &
         col("symbol").isNotNull() &
         col("open").isNotNull() & (col("open") > 0) &
@@ -92,132 +106,97 @@ def transform_and_clean(df_bronze):
         (col("high") >= col("open")) & (col("high") >= col("close"))
     )
 
+    # Deduplicate trong batch hiện tại
+    df_dedup = df_clean.dropDuplicates(["symbol", "timestamp"])
+
+    if df_dedup.rdd.isEmpty():
+        return
+
+    # Feature Engineering
     df_enriched = (
-        df_clean
-        .withColumn("date", date_format(col("timestamp"), "yyyy-MM-dd"))
+        df_dedup
+        .withColumn("date", date_format(col("timestamp"), "yyyy-MM-dd")) # Cột Partition
         .withColumn("hour", hour(col("timestamp")))
         .withColumn("avg_price", (col("high") + col("low")) / 2)
     )
 
-    df_final = df_enriched.dropDuplicates(["symbol", "timestamp"])
-    return df_final
+    # 5. Tạo ID Silver & Metadata thời gian
+    current_max_id = get_next_silver_id(spark)
+    w = Window.orderBy("timestamp", "symbol")
 
-
-def attach_ids_and_times(spark: SparkSession, df_silver):
-    max_id = get_max_silver_id(spark)
-    w = Window.orderBy(col("symbol"), col("timestamp"))
-    df_out = (
-        df_silver
-        .withColumn(
-            "dt_record_to_silver",
-            date_format(
-                to_utc_timestamp(current_timestamp(), "UTC"),
-                "yyyy-MM-dd'T'HH:mm:ss'Z'"
-            )
-        )
-        .withColumn("cd_silver_id", (row_number().over(w) + lit(max_id)).cast("long"))
+    df_final = (
+        df_enriched
+        .withColumn("row_num", row_number().over(w))
+        .withColumn("cd_silver_id", (col("row_num") + lit(current_max_id)).cast("long"))
+        .withColumn("dt_record_to_silver", date_format(to_utc_timestamp(current_timestamp(), "UTC"), "yyyy-MM-dd'T'HH:mm:ss'Z'"))
+        .drop("row_num")
     )
-    return df_out
 
+    # Sắp xếp cột
+    cols = df_final.columns
+    priority_cols = ["cd_silver_id", "cd_bronze_id", "symbol", "timestamp", "date"]
+    other_cols = [c for c in cols if c not in priority_cols]
+    df_final = df_final.select(*(priority_cols + other_cols))
 
-def upsert_to_silver(spark: SparkSession, df_silver):
-    df_silver.persist()
-    cnt = df_silver.count()
-    if cnt == 0:
-        print("✅ Không có dữ liệu mới để ghi vào Silver.")
-        df_silver.unpersist()
-        return
-
-    if not DeltaTable.isDeltaTable(spark, SILVER_PATH):
-        (
-            df_silver.write.format("delta")
-            .partitionBy("date", "symbol")
-            .mode("overwrite")
-            .save(SILVER_PATH)
-        )
-    else:
+    # 6. Ghi vào Silver (Append hoặc Upsert)
+    
+    if DeltaTable.isDeltaTable(spark, SILVER_PATH):
+        print(f"Merging {df_final.count()} rows into Silver...")
         delta_tbl = DeltaTable.forPath(spark, SILVER_PATH)
         (
             delta_tbl.alias("t")
             .merge(
-                df_silver.alias("s"),
+                df_final.alias("s"),
                 "t.symbol = s.symbol AND t.timestamp = s.timestamp"
             )
-            .whenMatchedUpdateAll()
-            .whenNotMatchedInsertAll()
+            .whenNotMatchedInsertAll() # Chỉ cần Insert vì ta đã filter > max rồi
             .execute()
         )
-
-    df_silver.unpersist()
-
-    spark.sql(f"""
-        CREATE TABLE IF NOT EXISTS {SILVER_DB}.{SILVER_TBL}
-        USING DELTA
-        LOCATION '{SILVER_PATH}'
-    """)
-    print(f"✅ Upserted {cnt} record(s) into {SILVER_DB}.{SILVER_TBL}.")
-
+    else:
+        print(f"Creating new Silver table with {df_final.count()} rows...")
+        (
+            df_final.write
+            .format("delta")
+            .partitionBy("date", "symbol")
+            .mode("overwrite")
+            .save(SILVER_PATH)
+        )
+        
+        spark.sql(f"CREATE DATABASE IF NOT EXISTS {SILVER_DB}")
+        spark.sql(f"""
+            CREATE TABLE IF NOT EXISTS {SILVER_DB}.{SILVER_TBL}
+            USING DELTA
+            LOCATION '{SILVER_PATH}'
+        """)
 
 def main():
     spark = build_spark()
-    ensure_meta(spark)
+    
+    if not DeltaTable.isDeltaTable(spark, BRONZE_PATH):
+        print("Bronze table not found via Delta. Please ensure Bronze 2 is created.")
+        return
 
-    df_bronze_raw = spark.read.table(f"{BRONZE_DB}.{BRONZE_TBL}")
-    df_bronze = df_bronze_raw.withColumn(
-        "timestamp_ts", to_timestamp(col("timestamp"), "yyyy-MM-dd HH:mm:ss")
+    print(f"🚀 Processing Silver Layer from {BRONZE_PATH}...")
+
+    # Đọc Streaming từ Bronze 2
+    df_stream = (
+        spark.readStream
+        .format("delta")
+        .option("ignoreChanges", "true") 
+        .load(BRONZE_PATH)
     )
 
-    if DeltaTable.isDeltaTable(spark, SILVER_PATH):
-        df_max_silver = (
-            spark.read.format("delta").load(SILVER_PATH)
-            .groupBy("symbol")
-            .agg({"timestamp": "max"})
-            .withColumnRenamed("max(timestamp)", "max_ts")
-        )
-    else:
-        df_max_silver = spark.createDataFrame([], "symbol STRING, max_ts TIMESTAMP")
-
-    df_bronze_inc = (
-        df_bronze.alias("b")
-        .join(df_max_silver.alias("s"), on="symbol", how="left")
-        .filter((col("s.max_ts").isNull()) | (col("b.timestamp_ts") > col("s.max_ts")))
-        .drop("max_ts")
+    query = (
+        df_stream.writeStream
+        .foreachBatch(process_batch)
+        .option("checkpointLocation", CHECKPOINT_PATH)
+        .trigger(availableNow=True)
+        .start()
     )
 
-    df_silver_base = transform_and_clean(
-        df_bronze_inc.drop("timestamp").withColumnRenamed("timestamp_ts", "timestamp")
-    )
-
-    if "dt_record_to_bronze" in df_bronze_raw.columns:
-        df_silver_base = df_silver_base.withColumn(
-            "dt_record_to_bronze", col("dt_record_to_bronze").cast("string")
-        )
-
-    df_silver = attach_ids_and_times(spark, df_silver_base)
-
-    cols = df_silver.columns
-    front_cols = [c for c in ["cd_silver_id", "cd_bronze_id", "dt_record_to_silver"] if c in cols]
-    other_cols = [c for c in cols if c not in front_cols]
-    df_silver = df_silver.select(*(front_cols + other_cols))
-
-    upsert_to_silver(spark, df_silver)
-
-    try:
-        row = spark.sql(f"SELECT MAX(timestamp) AS max_ts FROM {SILVER_DB}.{SILVER_TBL}").first()
-        max_ts_after = row.max_ts.strftime('%Y-%m-%d %H:%M:%S') if row and row.max_ts else None
-    except Exception:
-        max_ts_after = None
-
-    run_log = (
-        spark.createDataFrame([(None,)], "x INT")
-        .selectExpr("uuid() as run_id")
-        .withColumn("processed_at", current_timestamp())
-        .withColumn("processed_max_ts", lit(max_ts_after).cast("string"))
-    )
-
-    run_log.write.format("delta").mode("append").save(SILVER_CTRL_PATH)
+    query.awaitTermination()
+    print("✅ Silver Layer Updated Successfully!")
     spark.stop()
-
 
 if __name__ == "__main__":
     main()

@@ -1,0 +1,36 @@
+{"timestamp":"2025-11-24T07:38:37.800401Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T07:38:37.802750Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T07:38:55.761806Z","level":"info","event":"KẾT QUẢ HYBRID V2 (5 mã): {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.762353Z","level":"info","event":"  \"AAPL\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.762766Z","level":"info","event":"    \"Time\": \"08:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.763182Z","level":"info","event":"    \"Target_3H\": \"11:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.763597Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.764045Z","level":"info","event":"    \"Xac_Suat\": \"31.4%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.764487Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.764867Z","level":"info","event":"  \"AMZN\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.765077Z","level":"info","event":"    \"Time\": \"08:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.765216Z","level":"info","event":"    \"Target_3H\": \"11:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.765347Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.765477Z","level":"info","event":"    \"Xac_Suat\": \"4.3%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.765603Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.765731Z","level":"info","event":"  \"GOOGL\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.765856Z","level":"info","event":"    \"Time\": \"08:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.765989Z","level":"info","event":"    \"Target_3H\": \"11:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.766119Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.766246Z","level":"info","event":"    \"Xac_Suat\": \"8.8%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.766371Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.766496Z","level":"info","event":"  \"META\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.766681Z","level":"info","event":"    \"Time\": \"09:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.766850Z","level":"info","event":"    \"Target_3H\": \"12:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.766990Z","level":"info","event":"    \"Du_Bao\": \"TĂNG 🟢\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.767124Z","level":"info","event":"    \"Xac_Suat\": \"97.0%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.767378Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.767574Z","level":"info","event":"  \"MSFT\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.767728Z","level":"info","event":"    \"Time\": \"09:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.767861Z","level":"info","event":"    \"Target_3H\": \"12:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.767993Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.768122Z","level":"info","event":"    \"Xac_Suat\": \"1.7%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.768248Z","level":"info","event":"  }","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.768374Z","level":"info","event":"}","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:55.762138Z","level":"info","event":"Done. Returned value was: {'AAPL': {'Time': '08:59', 'Target_3H': '11:59', 'Du_Bao': 'GIẢM 🔴', 'Xac_Suat': '31.4%'}, 'AMZN': {'Time': '08:59', 'Target_3H': '11:59', 'Du_Bao': 'GIẢM 🔴', 'Xac_Suat': '4.3%'}, 'GOOGL': {'Time': '08:59', 'Target_3H': '11:59', 'Du_Bao': 'GIẢM 🔴', 'Xac_Suat': '8.8%'}, 'META': {'Time': '09:00', 'Target_3H': '12:00', 'Du_Bao': 'TĂNG 🟢', 'Xac_Suat': '97.0%'}, 'MSFT': {'Time': '09:00', 'Target_3H': '12:00', 'Du_Bao': 'GIẢM 🔴', 'Xac_Suat': '1.7%'}}","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2025-11-24T07:38:55.762434Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019ab4c8-2659-7465-8843-1826e31b9112'), task_id='silver_intraday_predict_5min', dag_id='stock_v2', run_id='manual__2025-11-24T07:33:27.240799+00:00', try_number=1, dag_version_id=UUID('019ab43b-232f-7130-a8c3-deb6f8ce903f'), map_index=-1, hostname='54a490be73e8', context_carrier={}, task=<Task(PythonOperator): silver_intraday_predict_5min>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=10, start_date=datetime.datetime(2025, 11, 24, 7, 38, 37, 713198, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1352}

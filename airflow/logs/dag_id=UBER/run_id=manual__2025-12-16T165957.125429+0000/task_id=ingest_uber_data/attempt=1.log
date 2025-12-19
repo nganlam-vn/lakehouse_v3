@@ -1,0 +1,8 @@
+{"timestamp":"2025-12-16T16:59:59.957213Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-12-16T16:59:59.958756Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/uber_dag.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-12-16T17:00:02.701242Z","level":"info","event":"Reading reference data from /opt/airflow/tasks/uber/data/ncr_ride_bookings.csv...","logger":"task.stdout"}
+{"timestamp":"2025-12-16T17:00:03.716875Z","level":"info","event":">>> Generating data for: 2025-12-15 | Volume: 404","logger":"task.stdout"}
+{"timestamp":"2025-12-16T17:00:03.717833Z","level":"info","event":"Generating 404 bookings for 2025-12-15...","logger":"task.stdout"}
+{"timestamp":"2025-12-16T17:00:03.811975Z","level":"info","event":"Uploading to MinIO: warehouse/bronze1/uber_booking/date=2025-12-15/uber_booking_2025-12-15.csv","logger":"task.stdout"}
+{"timestamp":"2025-12-16T17:00:03.906953Z","level":"info","event":"Upload Success!","logger":"task.stdout"}
+{"timestamp":"2025-12-16T17:00:03.907403Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

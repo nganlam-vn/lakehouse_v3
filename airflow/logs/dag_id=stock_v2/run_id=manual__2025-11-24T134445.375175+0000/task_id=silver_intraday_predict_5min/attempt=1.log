@@ -1,0 +1,36 @@
+{"timestamp":"2025-11-24T13:55:17.539550Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T13:55:17.543569Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T13:55:22.762046Z","level":"info","event":"✅ Models & Scaler Ready!","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.984971Z","level":"info","event":"KẾT QUẢ HYBRID V2 (5 mã): {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.986721Z","level":"info","event":"  \"AAPL\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.989747Z","level":"info","event":"    \"Time\": \"13:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.989947Z","level":"info","event":"    \"Target_3H\": \"14:35\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.990129Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.990267Z","level":"info","event":"    \"Xac_Suat\": \"45.0%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.990457Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.990597Z","level":"info","event":"  \"AMZN\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.990885Z","level":"info","event":"    \"Time\": \"13:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.991052Z","level":"info","event":"    \"Target_3H\": \"14:35\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.991215Z","level":"info","event":"    \"Du_Bao\": \"TĂNG 🟢\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.991363Z","level":"info","event":"    \"Xac_Suat\": \"50.5%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.991519Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.991690Z","level":"info","event":"  \"GOOGL\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.991845Z","level":"info","event":"    \"Time\": \"13:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.991987Z","level":"info","event":"    \"Target_3H\": \"14:35\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.992138Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.992283Z","level":"info","event":"    \"Xac_Suat\": \"46.8%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.992423Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.992563Z","level":"info","event":"  \"META\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.992703Z","level":"info","event":"    \"Time\": \"14:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.992838Z","level":"info","event":"    \"Target_3H\": \"14:36\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.992982Z","level":"info","event":"    \"Du_Bao\": \"TĂNG 🟢\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.993120Z","level":"info","event":"    \"Xac_Suat\": \"77.5%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.993251Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.993390Z","level":"info","event":"  \"MSFT\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.993533Z","level":"info","event":"    \"Time\": \"14:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.993676Z","level":"info","event":"    \"Target_3H\": \"14:36\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.993817Z","level":"info","event":"    \"Du_Bao\": \"TĂNG 🟢\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.993955Z","level":"info","event":"    \"Xac_Suat\": \"59.5%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.994093Z","level":"info","event":"  }","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.994251Z","level":"info","event":"}","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:55:22.985067Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

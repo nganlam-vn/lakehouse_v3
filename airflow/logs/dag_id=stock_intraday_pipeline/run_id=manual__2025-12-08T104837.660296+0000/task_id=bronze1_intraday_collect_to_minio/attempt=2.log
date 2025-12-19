@@ -1,0 +1,7 @@
+{"timestamp":"2025-12-08T14:26:39.516203Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-12-08T14:26:39.519320Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-12-08T14:26:45.759703Z","level":"info","event":"🚀 Bắt đầu Task Ingest Data...","logger":"root","filename":"stock_intraday_collector.py","lineno":88}
+{"timestamp":"2025-12-08T14:26:45.760022Z","level":"info","event":"🔄 Fetching AAPL...","logger":"root","filename":"stock_intraday_collector.py","lineno":27}
+{"timestamp":"2025-12-08T14:26:49.527384Z","level":"error","event":"❌ Fetch Error: 'timestamp'","logger":"root","filename":"stock_intraday_collector.py","lineno":50}
+{"timestamp":"2025-12-08T14:26:49.536032Z","level":"warning","event":"⚠️ Không có dữ liệu để upload hoặc gặp lỗi khi fetch.","logger":"root","filename":"stock_intraday_collector.py","lineno":97}
+{"timestamp":"2025-12-08T14:26:49.536339Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

@@ -8,20 +8,25 @@ from pyspark.sql.functions import (
 )
 from delta.tables import DeltaTable
 
+# ==== CONFIG MINIO / DELTA ====
 MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT", "http://minio:9000")
 MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY", "admin")
 MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY", "password")
 MINIO_SECURE = os.getenv("MINIO_SECURE", "false").lower() in ("1","true","yes","y")
 
-BUCKET    = os.getenv("BUCKET", "warehouse")
-SRC_PATH  = os.getenv("SRC_PATH", f"s3a://{BUCKET}/bronze2/finance_news")
-DST_PATH  = os.getenv("DST_PATH", f"s3a://{BUCKET}/silver/finance_news")
-DST_DB    = os.getenv("DST_DB", "silver")
-DST_TBL   = os.getenv("DST_TBL", "finance_news")
-DAYS_BACK = int(os.getenv("DAYS_BACK", "0"))
+BUCKET          = os.getenv("BUCKET", "warehouse")
+BRONZE2_PREFIX  = os.getenv("BRONZE2_PREFIX", "bronze2/finance_news")
+SILVER_PREFIX   = os.getenv("SILVER_PREFIX", "silver/finance_news")
+
+SRC_PATH        = os.getenv("SRC_PATH", f"s3a://{BUCKET}/{BRONZE2_PREFIX}")
+DST_PATH        = os.getenv("DST_PATH", f"s3a://{BUCKET}/{SILVER_PREFIX}")
+DST_DB          = os.getenv("DST_DB", "silver")
+DST_TBL         = os.getenv("DST_TBL", "finance_news")
+
+DAYS_BACK       = int(os.getenv("DAYS_BACK", "0"))
 
 HIVE_METASTORE_URIS = os.getenv("HIVE_METASTORE_URIS", "thrift://hive-metastore:9083")
-WAREHOUSE_DIR = os.getenv("SPARK_SQL_WAREHOUSE_DIR", f"s3a://{BUCKET}/_spark_warehouse")
+WAREHOUSE_DIR       = os.getenv("SPARK_SQL_WAREHOUSE_DIR", f"s3a://{BUCKET}/_spark_warehouse")
 
 
 def build_spark() -> SparkSession:
@@ -144,10 +149,17 @@ def apply_day_window(df):
 def prepare_source_with_ids(spark: SparkSession, delta_tbl, df_norm):
     from pyspark.sql.functions import max as fmax
 
-    existing = delta_tbl.toDF().select("article_id").distinct()
-    to_insert = df_norm.join(existing, on="article_id", how="left_anti")
-    to_update = df_norm.join(existing, on="article_id", how="inner")
+    # Lấy các id đang có trong silver
+    existing = (
+        delta_tbl.toDF()
+        .select("article_id", "cd_silver_id", "dt_record_to_silver")
+        .distinct()
+    )
 
+    # Join để biết bản ghi nào đã tồn tại
+    df_joined = df_norm.join(existing, on="article_id", how="left")
+
+    # Lấy max id hiện tại
     try:
         m = delta_tbl.toDF().agg(fmax("cd_silver_id")).collect()[0][0]
         max_id = int(m) if m is not None else 0
@@ -155,25 +167,30 @@ def prepare_source_with_ids(spark: SparkSession, delta_tbl, df_norm):
         max_id = 0
 
     w = Window.orderBy(col("article_id"))
-    to_insert = (
-        to_insert
-        .withColumn("cd_silver_id", (row_number().over(w) + lit(max_id)).cast("long"))
+
+    # Nếu chưa có cd_silver_id thì cấp id mới + timestamp mới
+    df_with_ids = (
+        df_joined
+        .withColumn(
+            "cd_silver_id",
+            when(col("cd_silver_id").isNull(),
+                 (row_number().over(w) + lit(max_id)).cast("long")
+            ).otherwise(col("cd_silver_id"))
+        )
         .withColumn(
             "dt_record_to_silver",
-            date_format(
-                to_utc_timestamp(current_timestamp(), "UTC"),
-                "yyyy-MM-dd'T'HH:mm:ss'Z'"
-            )
+            when(
+                col("dt_record_to_silver").isNull(),
+                date_format(
+                    to_utc_timestamp(current_timestamp(), "UTC"),
+                    "yyyy-MM-dd'T'HH:mm:ss'Z'"
+                )
+            ).otherwise(col("dt_record_to_silver"))
         )
     )
 
-    to_update = (
-        to_update
-        .withColumn("cd_silver_id", lit(None).cast("long"))
-        .withColumn("dt_record_to_silver", lit(None).cast("string"))
-    )
+    return df_with_ids
 
-    return to_update.unionByName(to_insert)
 
 
 def upsert(delta_tbl, df_merge_ready):
@@ -212,7 +229,6 @@ def main():
     silver_tbl = ensure_table_storage(spark, df.limit(1))
     src_for_merge = prepare_source_with_ids(spark, silver_tbl, df)
 
-    # ⭐ Reorder cột: cd_silver_id, cd_bronze_id, dt_record_to_silver lên đầu
     cols = src_for_merge.columns
     front_cols = [c for c in ["cd_silver_id", "cd_bronze_id", "dt_record_to_silver"] if c in cols]
     other_cols = [c for c in cols if c not in front_cols]

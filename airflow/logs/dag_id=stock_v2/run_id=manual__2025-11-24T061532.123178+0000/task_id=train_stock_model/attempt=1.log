@@ -1,0 +1,7 @@
+{"timestamp":"2025-11-24T06:17:08.365868Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T06:17:08.369295Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T06:17:13.164825Z","level":"info","event":"Đang xử lý dữ liệu Intraday...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:17:13.203793Z","level":"info","event":"Số mẫu Train: 8105","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:17:15.049562Z","level":"info","event":"Bắt đầu training...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:17:18.470023Z","level":"info","event":"Epoch   0 | Train Loss: 0.6936 | Val Loss: 0.6922","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:17:18.470589Z","level":"info","event":"   >> Metrics: Acc: 53.36% | Prec: 0.00% | Rec: 0.00% | F1: 0.00%","logger":"task.stdout"}

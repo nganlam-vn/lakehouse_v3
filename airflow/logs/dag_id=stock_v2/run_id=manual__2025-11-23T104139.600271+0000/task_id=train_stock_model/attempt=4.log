@@ -1,0 +1,16 @@
+{"timestamp":"2025-11-23T10:43:11.275561Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-23T10:43:11.277132Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-23T10:43:14.915819Z","level":"info","event":"Bắt đầu quy trình huấn luyện Single-step Classification (1 Ngày tới).","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:15.276116Z","level":"info","event":"Đang xử lý lấp đầy ngày thiếu (Gap Filling)...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:15.292784Z","level":"info","event":"Dữ liệu sau khi xử lý Gap: 100 dòng.","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:15.300129Z","level":"info","event":"Tổng số mẫu huấn luyện: 30","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:23.883831Z","level":"info","event":"Epoch   0 | Loss: 0.6816273","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:24.281107Z","level":"info","event":"Epoch  20 | Loss: 0.0798647","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:24.604001Z","level":"info","event":"Epoch  40 | Loss: 0.1132775","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:25.016641Z","level":"info","event":"Epoch  60 | Loss: 0.1219842","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:25.357104Z","level":"info","event":"Epoch  80 | Loss: 0.1171821","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:26.142719Z","level":"info","event":"Uploaded → s3://models/lstm/v3_single_step_cls/model.pth","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:26.249483Z","level":"info","event":"Uploaded → s3://models/lstm/v3_single_step_cls/scaler.pkl","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:26.316069Z","level":"info","event":"Uploaded → s3://models/lstm/v3_single_step_cls/metadata.json","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:26.318657Z","level":"info","event":"✅ TRAIN HOÀN TẤT (1 NGÀY) – MODEL ĐÃ LÊN MINIO!","logger":"task.stdout"}
+{"timestamp":"2025-11-23T10:43:26.317905Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

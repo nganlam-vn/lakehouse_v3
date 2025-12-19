@@ -1,0 +1,12 @@
+{"timestamp":"2025-11-24T14:43:36.121981Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T14:43:36.128882Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T14:44:46.156838Z","level":"info","event":"Số mẫu huấn luyện: 16085","logger":"task.stdout"}
+{"timestamp":"2025-11-24T14:45:32.823782Z","level":"info","event":"   Epoch   0 | Train Loss: 0.6911 | Val Loss: 0.6926","logger":"task.stdout"}
+{"timestamp":"2025-11-24T14:47:06.402834Z","level":"info","event":"   Epoch  10 | Train Loss: 0.6815 | Val Loss: 0.6920","logger":"task.stdout"}
+{"timestamp":"2025-11-24T14:49:00.661159Z","level":"info","event":"   Epoch  20 | Train Loss: 0.6575 | Val Loss: 0.7203","logger":"task.stdout"}
+{"timestamp":"2025-11-24T14:50:46.095232Z","level":"info","event":"   Epoch  30 | Train Loss: 0.6482 | Val Loss: 0.7366","logger":"task.stdout"}
+{"timestamp":"2025-11-24T14:52:23.955631Z","level":"info","event":"   Epoch  40 | Train Loss: 0.6398 | Val Loss: 0.7237","logger":"task.stdout"}
+{"timestamp":"2025-11-24T14:55:15.908149Z","level":"info","event":"   Epoch  50 | Train Loss: 0.6078 | Val Loss: 0.7649","logger":"task.stdout"}
+{"timestamp":"2025-11-24T14:55:36.158171Z","level":"info","event":"   Epoch  60 | Train Loss: 0.6356 | Val Loss: 0.8057","logger":"task.stdout"}
+{"timestamp":"2025-11-24T14:57:29.685359Z","level":"info","event":"   Epoch  70 | Train Loss: 0.6582 | Val Loss: 0.7454","logger":"task.stdout"}
+{"timestamp":"2025-11-24T15:00:18.779636Z","level":"info","event":"   Epoch  80 | Train Loss: 0.6604 | Val Loss: 0.7105","logger":"task.stdout"}

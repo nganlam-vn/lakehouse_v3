@@ -1,0 +1,19 @@
+{"timestamp":"2025-11-24T06:16:47.082712Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T06:16:47.085760Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T06:16:52.746714Z","level":"info","event":"Đang xử lý dữ liệu Intraday...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:16:53.090769Z","level":"info","event":"Số mẫu Train: 8105","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:16:54.820733Z","level":"info","event":"Bắt đầu training...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:16:58.197901Z","level":"info","event":"Epoch   0 | Train Loss: 0.6935 | Val Loss: 0.6928","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:16:58.198441Z","level":"info","event":"   >> Metrics: Acc: 53.49% | Prec: 58.33% | Rec: 0.93% | F1: 1.82%","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:17:19.507826Z","level":"info","event":"Epoch  10 | Train Loss: 0.6932 | Val Loss: 0.6930","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:17:19.508360Z","level":"info","event":"   >> Metrics: Acc: 52.68% | Prec: 47.62% | Rec: 14.55% | F1: 22.29%","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:17:49.511743Z","level":"info","event":"Epoch  20 | Train Loss: 0.6933 | Val Loss: 0.6929","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:17:49.512302Z","level":"info","event":"   >> Metrics: Acc: 53.36% | Prec: 0.00% | Rec: 0.00% | F1: 0.00%","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:18:18.737644Z","level":"info","event":"Epoch  30 | Train Loss: 0.6932 | Val Loss: 0.6933","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:18:18.738261Z","level":"info","event":"   >> Metrics: Acc: 46.64% | Prec: 46.64% | Rec: 100.00% | F1: 63.61%","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:18:47.582947Z","level":"info","event":"Epoch  40 | Train Loss: 0.6932 | Val Loss: 0.6938","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:18:47.583427Z","level":"info","event":"   >> Metrics: Acc: 46.64% | Prec: 46.64% | Rec: 100.00% | F1: 63.61%","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:20:19.333881Z","level":"info","event":"Epoch  49 | Train Loss: 0.6932 | Val Loss: 0.6931","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:20:19.334384Z","level":"info","event":"   >> Metrics: Acc: 53.49% | Prec: 75.00% | Rec: 0.40% | F1: 0.79%","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:20:19.941691Z","level":"info","event":"✅ Train Intraday Hoàn Tất!","logger":"task.stdout"}
+{"timestamp":"2025-11-24T06:20:19.961103Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

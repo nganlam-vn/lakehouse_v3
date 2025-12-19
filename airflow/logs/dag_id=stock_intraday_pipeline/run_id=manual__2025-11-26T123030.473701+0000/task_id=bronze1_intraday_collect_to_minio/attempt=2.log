@@ -1,0 +1,6 @@
+{"timestamp":"2025-11-26T12:40:58.972818Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-26T12:40:58.974232Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-26T12:41:05.253861Z","level":"info","event":"🚀 Bắt đầu Task Ingest Data...","logger":"root","filename":"stock_intraday_collector.py","lineno":88}
+{"timestamp":"2025-11-26T12:41:05.254091Z","level":"info","event":"🔄 Fetching AAPL...","logger":"root","filename":"stock_intraday_collector.py","lineno":27}
+{"timestamp":"2025-11-26T12:41:07.519044Z","level":"info","event":"✅ Uploaded to: warehouse/bronze1/stocks_intraday/date_ny=2025-11-26/symbol=AAPL/data_124107.json","logger":"root","filename":"stock_intraday_collector.py","lineno":84}
+{"timestamp":"2025-11-26T12:41:07.519672Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

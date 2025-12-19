@@ -1,0 +1,25 @@
+{"timestamp":"2025-11-16T10:08:40.831366Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-16T10:08:40.832810Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/finance_news_pipeline_v1.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-16T10:08:41.093146Z","level":"info","event":"--> Symbol=AAPL | Last 4h (VN time) | from=2025-11-16T06:08:41.092807Z to=2025-11-16T10:08:41.092807Z","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:41.093889Z","level":"info","event":"    Query: \"Apple\" OR \"AAPL\" OR \"iPhone\" OR \"Tim Cook\"","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:09:47.064396Z","level":"info","event":"   • 0 bài","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:41.731307Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-16/symbol=AAPL/from_1308_to_1708_ts_20251116T100947Z.json (2 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:42.731821Z","level":"info","event":"--> Symbol=MSFT | Last 4h (VN time) | from=2025-11-16T06:08:42.731530Z to=2025-11-16T10:08:42.731530Z","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:42.732411Z","level":"info","event":"    Query: \"Microsoft\" OR \"MSFT\" OR \"Azure\" OR \"Satya Nadella\"","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:43.043300Z","level":"info","event":"   • 0 bài","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:43.123199Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-16/symbol=MSFT/from_1308_to_1708_ts_20251116T100843Z.json (2 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:44.123501Z","level":"info","event":"--> Symbol=IBM | Last 4h (VN time) | from=2025-11-16T06:08:44.123260Z to=2025-11-16T10:08:44.123260Z","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:44.123940Z","level":"info","event":"    Query: \"IBM\"","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:44.432319Z","level":"info","event":"   • 0 bài","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:44.497492Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-16/symbol=IBM/from_1308_to_1708_ts_20251116T100844Z.json (2 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:45.498041Z","level":"info","event":"--> Symbol=GOOGL | Last 4h (VN time) | from=2025-11-16T06:08:45.497675Z to=2025-11-16T10:08:45.497675Z","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:45.498621Z","level":"info","event":"    Query: \"Google\" OR \"Alphabet\" OR \"GOOGL\" OR \"Sundar Pichai\"","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:45.810243Z","level":"info","event":"   • 0 bài","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:45.897974Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-16/symbol=GOOGL/from_1308_to_1708_ts_20251116T100845Z.json (2 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:46.899705Z","level":"info","event":"--> Symbol=AMZN | Last 4h (VN time) | from=2025-11-16T06:08:46.899169Z to=2025-11-16T10:08:46.899169Z","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:46.900296Z","level":"info","event":"    Query: \"Amazon\" OR \"AMZN\" OR \"AWS\" OR \"Andy Jassy\"","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:47.212423Z","level":"info","event":"   • 0 bài","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:47.347659Z","level":"info","event":"⬆️  Uploaded: s3://warehouse/bronze1/finance_news/date=2025-11-16/symbol=AMZN/from_1308_to_1708_ts_20251116T100847Z.json (2 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:48.348012Z","level":"info","event":"✅ Done window 4h cho các symbol ['AAPL', 'MSFT', 'IBM', 'GOOGL', 'AMZN']. Tổng số bài: 0","logger":"task.stdout"}
+{"timestamp":"2025-11-16T10:08:48.350255Z","level":"info","event":"Done. Returned value was: 0","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2025-11-16T10:08:48.350779Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019a8c21-328a-7e44-b267-9947bf92fb9c'), task_id='collect_finance_news_last_2h', dag_id='news1', run_id='manual__2025-11-16T09:59:32.816796+00:00', try_number=5, dag_version_id=UUID('019a8c1b-135f-7ac3-846b-15eac3185bc1'), map_index=-1, hostname='e8feec7d62eb', context_carrier={}, task=<Task(PythonOperator): collect_finance_news_last_2h>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=10, start_date=datetime.datetime(2025, 11, 16, 10, 8, 40, 744160, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1352}

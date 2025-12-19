@@ -15,10 +15,10 @@ DEFAULT_ARGS = {
 }
 
 with DAG(
-    dag_id="official_coin_to_delta_dag",
+    dag_id="coinmarketcap_official_pipeline",
     description="CoinMarketCap -> Bronze1 JSON -> Bronze2 Delta -> Silver",
     start_date=pendulum.datetime(2024, 1, 1, tz=TZ),
-    #schedule="*/5 * * * *",                     # chạy mỗi 5 phút
+    #schedule="*/12 * * * *",                     # chạy mỗi 12 phút
     catchup=False,
     max_active_runs=1,                          # không cho chạy chồng
     default_args=DEFAULT_ARGS,

@@ -1,0 +1,15 @@
+{"timestamp":"2025-11-24T04:48:24.672230Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T04:48:24.676100Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T04:48:28.473804Z","level":"info","event":"Bắt đầu quy trình huấn luyện (Optimized for Small Data).","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:48:34.645517Z","level":"info","event":"Cân bằng dữ liệu: {0: 50, 1: 45}","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:48:34.647870Z","level":"info","event":"Số mẫu Train: 50","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:48:52.747060Z","level":"info","event":"Epoch 0: Loss=0.6759","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:48:53.028390Z","level":"info","event":"Epoch 20: Loss=0.7536","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:48:53.209347Z","level":"info","event":"Epoch 40: Loss=0.5579","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:48:53.420897Z","level":"info","event":"Epoch 60: Loss=0.5405","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:48:53.571984Z","level":"info","event":"Epoch 80: Loss=0.5263","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:48:53.750436Z","level":"info","event":"Epoch 100: Loss=0.5999","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:48:53.983322Z","level":"info","event":"Epoch 120: Loss=0.7436","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:50:05.030248Z","level":"info","event":"Epoch 140: Loss=0.6016","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:48:54.424408Z","level":"info","event":"✅ Train V4 (Returns) Completed!","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:48:54.426128Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

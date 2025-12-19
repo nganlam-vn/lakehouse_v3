@@ -1,0 +1,100 @@
+{"timestamp":"2025-11-24T12:47:20.987747Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T12:47:20.988955Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T12:47:21.501597Z","level":"info","event":"--- START BACKFILL JOB (Target: 30 days) ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:47:21.502293Z","level":"info","event":"--- Endpoint: minio:9000 ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:47:21.502885Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:47:21.503362Z","level":"info","event":"🚀 Bắt đầu lấy lịch sử cho: AAPL","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:47:21.503727Z","level":"info","event":"   ... Requesting chunk: 2025-11-17 -> 2025-11-24","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:47:23.108208Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-24/symbol=AAPL/stockdata_20251124T124722Z.jsonl (390 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:47:23.108786Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:47:38.095762Z","level":"info","event":"   ... Requesting chunk: 2025-11-10 -> 2025-11-17","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:47:40.041862Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-17/symbol=AAPL/stockdata_20251124T124739Z.jsonl (1954 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:47:40.042275Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:47:50.049226Z","level":"info","event":"   ... Requesting chunk: 2025-11-03 -> 2025-11-10","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:47:52.150130Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-10/symbol=AAPL/stockdata_20251124T124751Z.jsonl (2345 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:47:52.150548Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:05.150226Z","level":"info","event":"   ... Requesting chunk: 2025-10-27 -> 2025-11-03","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:07.031146Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-03/symbol=AAPL/stockdata_20251124T124806Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:07.031616Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:21.044759Z","level":"info","event":"   ... Requesting chunk: 2025-10-20 -> 2025-10-27","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:22.271173Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-10-27/symbol=AAPL/stockdata_20251124T124822Z.jsonl (782 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:22.271580Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:36.257759Z","level":"info","event":"🏁 Hoàn thành AAPL. Tổng record: 7815","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:36.258440Z","level":"info","event":"⏳ Nghỉ dài 20s trước khi sang mã cổ phiếu tiếp theo...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:56.262715Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:56.263235Z","level":"info","event":"🚀 Bắt đầu lấy lịch sử cho: MSFT","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:56.263766Z","level":"info","event":"   ... Requesting chunk: 2025-11-17 -> 2025-11-24","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:56.880000Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-24/symbol=MSFT/stockdata_20251124T124856Z.jsonl (391 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:48:56.880437Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:49:11.873820Z","level":"info","event":"   ... Requesting chunk: 2025-11-10 -> 2025-11-17","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:49:13.490668Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-17/symbol=MSFT/stockdata_20251124T124913Z.jsonl (1951 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:49:13.491095Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:49:28.489057Z","level":"info","event":"   ... Requesting chunk: 2025-11-03 -> 2025-11-10","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:40.503451Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-10/symbol=MSFT/stockdata_20251124T124929Z.jsonl (2343 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:40.504007Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:49:45.183393Z","level":"info","event":"   ... Requesting chunk: 2025-10-27 -> 2025-11-03","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:49:46.799368Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-03/symbol=MSFT/stockdata_20251124T124946Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:49:46.799961Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:49:59.799031Z","level":"info","event":"   ... Requesting chunk: 2025-10-20 -> 2025-10-27","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:00.826356Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-10-27/symbol=MSFT/stockdata_20251124T125000Z.jsonl (780 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:00.826770Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:10.833901Z","level":"info","event":"🏁 Hoàn thành MSFT. Tổng record: 7809","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:10.834457Z","level":"info","event":"⏳ Nghỉ dài 20s trước khi sang mã cổ phiếu tiếp theo...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:30.820790Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:30.821580Z","level":"info","event":"🚀 Bắt đầu lấy lịch sử cho: META","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:30.822119Z","level":"info","event":"   ... Requesting chunk: 2025-11-17 -> 2025-11-24","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:31.430148Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-24/symbol=META/stockdata_20251124T125031Z.jsonl (391 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:31.430751Z","level":"info","event":"      💤 Nghỉ 12s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:43.444142Z","level":"info","event":"   ... Requesting chunk: 2025-11-10 -> 2025-11-17","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:45.021704Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-17/symbol=META/stockdata_20251124T125044Z.jsonl (1951 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:50:45.022262Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:10.363682Z","level":"info","event":"   ... Requesting chunk: 2025-11-03 -> 2025-11-10","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:51:01.935117Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-10/symbol=META/stockdata_20251124T125101Z.jsonl (2341 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:51:01.935561Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:51:11.928835Z","level":"info","event":"   ... Requesting chunk: 2025-10-27 -> 2025-11-03","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:24.214183Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-03/symbol=META/stockdata_20251124T125113Z.jsonl (2340 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:24.214731Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:51:27.889261Z","level":"info","event":"   ... Requesting chunk: 2025-10-20 -> 2025-10-27","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:39.284041Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-10-27/symbol=META/stockdata_20251124T125239Z.jsonl (780 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:39.285417Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:51:41.941633Z","level":"info","event":"🏁 Hoàn thành META. Tổng record: 7803","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:51:41.943126Z","level":"info","event":"⏳ Nghỉ dài 20s trước khi sang mã cổ phiếu tiếp theo...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:01.959639Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:01.961151Z","level":"info","event":"🚀 Bắt đầu lấy lịch sử cho: GOOGL","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:01.962331Z","level":"info","event":"   ... Requesting chunk: 2025-11-17 -> 2025-11-24","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:02.654874Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-24/symbol=GOOGL/stockdata_20251124T125202Z.jsonl (390 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:02.655619Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:16.649910Z","level":"info","event":"   ... Requesting chunk: 2025-11-10 -> 2025-11-17","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:18.173859Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-17/symbol=GOOGL/stockdata_20251124T125217Z.jsonl (1952 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:18.174263Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:29.166992Z","level":"info","event":"   ... Requesting chunk: 2025-11-03 -> 2025-11-10","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:30.795099Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-10/symbol=GOOGL/stockdata_20251124T125230Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:30.796209Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:40.795067Z","level":"info","event":"   ... Requesting chunk: 2025-10-27 -> 2025-11-03","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:42.409508Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-03/symbol=GOOGL/stockdata_20251124T125242Z.jsonl (2343 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:42.409945Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:56.422161Z","level":"info","event":"   ... Requesting chunk: 2025-10-20 -> 2025-10-27","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:57.283000Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-10-27/symbol=GOOGL/stockdata_20251124T125257Z.jsonl (781 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:52:57.283676Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:53:11.277152Z","level":"info","event":"🏁 Hoàn thành GOOGL. Tổng record: 7810","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:53:11.277690Z","level":"info","event":"⏳ Nghỉ dài 20s trước khi sang mã cổ phiếu tiếp theo...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:53:31.285310Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:53:31.285900Z","level":"info","event":"🚀 Bắt đầu lấy lịch sử cho: AMZN","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:53:31.286227Z","level":"info","event":"   ... Requesting chunk: 2025-11-17 -> 2025-11-24","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:53:31.858603Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-24/symbol=AMZN/stockdata_20251124T125331Z.jsonl (390 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:53:31.859072Z","level":"info","event":"      💤 Nghỉ 12s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:53:43.842468Z","level":"info","event":"   ... Requesting chunk: 2025-11-10 -> 2025-11-17","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:53:45.345732Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-17/symbol=AMZN/stockdata_20251124T125345Z.jsonl (1951 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:53:45.346210Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:53:59.352959Z","level":"info","event":"   ... Requesting chunk: 2025-11-03 -> 2025-11-10","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:54:01.228970Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-10/symbol=AMZN/stockdata_20251124T125401Z.jsonl (2341 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:54:01.229433Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:54:15.242139Z","level":"info","event":"   ... Requesting chunk: 2025-10-27 -> 2025-11-03","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:54:17.143254Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-03/symbol=AMZN/stockdata_20251124T125416Z.jsonl (2343 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:54:17.143870Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:54:27.124379Z","level":"info","event":"   ... Requesting chunk: 2025-10-20 -> 2025-10-27","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:54:28.007655Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-10-27/symbol=AMZN/stockdata_20251124T125427Z.jsonl (781 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:54:28.008047Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:54:41.028168Z","level":"info","event":"🏁 Hoàn thành AMZN. Tổng record: 7806","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:54:41.029125Z","level":"info","event":"⏳ Nghỉ dài 20s trước khi sang mã cổ phiếu tiếp theo...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T12:55:01.026441Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

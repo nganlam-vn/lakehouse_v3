@@ -1,0 +1,9 @@
+{"timestamp":"2025-11-25T14:49:57.487446Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-25T14:49:57.488960Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-25T14:50:01.148560Z","level":"info","event":"--- START BACKFILL JOB (Target: 365 days) ---","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:50:01.150169Z","level":"info","event":"--- Endpoint: minio:9000 ---","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:50:01.150768Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:50:01.151314Z","level":"info","event":"🚀 Bắt đầu lấy lịch sử cho: AAPL","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:50:01.151572Z","level":"info","event":"   ... Requesting chunk: 2025-11-18 -> 2025-11-25","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:50:03.393280Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-25/symbol=AAPL/stockdata_20251125T145003Z.jsonl (781 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:50:03.393833Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}

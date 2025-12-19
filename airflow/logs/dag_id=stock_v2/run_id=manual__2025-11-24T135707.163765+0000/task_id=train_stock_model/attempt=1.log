@@ -1,0 +1,3 @@
+{"timestamp":"2025-11-24T13:57:08.046456Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T13:57:08.047786Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T13:56:00.849605Z","level":"info","event":"Số mẫu huấn luyện: 16235","logger":"task.stdout"}

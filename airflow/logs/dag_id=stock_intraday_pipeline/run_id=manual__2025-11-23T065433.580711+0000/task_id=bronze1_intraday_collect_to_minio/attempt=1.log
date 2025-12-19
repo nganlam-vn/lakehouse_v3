@@ -1,0 +1,20 @@
+{"timestamp":"2025-11-23T06:54:36.357317Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-23T06:54:36.358781Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-23T06:54:50.563965Z","level":"info","event":"--- INCREMENTAL JOB: LAST 3 HOURS ---","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:54:50.564418Z","level":"info","event":"--- Endpoint: minio:9000 ---","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:54:50.564860Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:54:50.565955Z","level":"info","event":"🚀 Fetching last 3 hours for: AAPL","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:54:52.217006Z","level":"info","event":"   ❌ API Error: 401 Client Error: Unauthorized for url: https://api.stockdata.org/v1/data/intraday?api_token=YOUR_STOCKDATA_API_TOKEN&symbols=AAPL&interval=minute&date_from=2025-11-23&date_to=2025-11-23&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:54:54.217312Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:54:54.217808Z","level":"info","event":"🚀 Fetching last 3 hours for: MSFT","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:54:54.655174Z","level":"info","event":"   ❌ API Error: 401 Client Error: Unauthorized for url: https://api.stockdata.org/v1/data/intraday?api_token=YOUR_STOCKDATA_API_TOKEN&symbols=MSFT&interval=minute&date_from=2025-11-23&date_to=2025-11-23&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:54:56.655404Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:54:56.655817Z","level":"info","event":"🚀 Fetching last 3 hours for: META","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:54:57.038481Z","level":"info","event":"   ❌ API Error: 401 Client Error: Unauthorized for url: https://api.stockdata.org/v1/data/intraday?api_token=YOUR_STOCKDATA_API_TOKEN&symbols=META&interval=minute&date_from=2025-11-23&date_to=2025-11-23&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:54:59.038751Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:54:59.039504Z","level":"info","event":"🚀 Fetching last 3 hours for: GOOGL","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:55:00.004965Z","level":"info","event":"   ❌ API Error: 401 Client Error: Unauthorized for url: https://api.stockdata.org/v1/data/intraday?api_token=YOUR_STOCKDATA_API_TOKEN&symbols=GOOGL&interval=minute&date_from=2025-11-23&date_to=2025-11-23&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:55:01.994451Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:55:01.994906Z","level":"info","event":"🚀 Fetching last 3 hours for: AMZN","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:55:03.072889Z","level":"info","event":"   ❌ API Error: 401 Client Error: Unauthorized for url: https://api.stockdata.org/v1/data/intraday?api_token=YOUR_STOCKDATA_API_TOKEN&symbols=AMZN&interval=minute&date_from=2025-11-23&date_to=2025-11-23&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-23T06:55:05.084115Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

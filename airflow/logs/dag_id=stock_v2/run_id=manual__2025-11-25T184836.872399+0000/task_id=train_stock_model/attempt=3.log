@@ -1,0 +1,10 @@
+{"timestamp":"2025-11-25T18:49:20.776106Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-25T18:49:20.777559Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-25T18:49:26.898816Z","level":"info","event":"Số mẫu huấn luyện: 3245","logger":"task.stdout"}
+{"timestamp":"2025-11-25T18:49:48.256356Z","level":"info","event":"   Epoch   0 | Train Loss: 0.6900 | Val Loss: 0.7097","logger":"task.stdout"}
+{"timestamp":"2025-11-25T18:50:04.696529Z","level":"info","event":"   Epoch  10 | Train Loss: 0.6487 | Val Loss: 0.7038","logger":"task.stdout"}
+{"timestamp":"2025-11-25T18:50:19.786884Z","level":"info","event":"   Epoch  20 | Train Loss: 0.6167 | Val Loss: 0.7748","logger":"task.stdout"}
+{"timestamp":"2025-11-25T18:50:35.031336Z","level":"info","event":"   Epoch  30 | Train Loss: 0.5778 | Val Loss: 0.8590","logger":"task.stdout"}
+{"timestamp":"2025-11-25T18:50:50.226820Z","level":"error","event":"Server indicated the task shouldn't be running anymore. Terminating process","detail":{"detail":{"reason":"not_found","message":"Task Instance not found"}},"logger":"task"}
+{"timestamp":"2025-11-25T18:50:53.424463Z","level":"info","event":"   Epoch  40 | Train Loss: 0.5603 | Val Loss: 0.8557","logger":"task.stdout"}
+{"timestamp":"2025-11-25T18:51:00.229313Z","level":"error","event":"Task killed!","logger":"task"}

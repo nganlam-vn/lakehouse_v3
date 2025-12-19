@@ -1,0 +1,61 @@
+{"timestamp":"2025-11-23T09:38:30.384162Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-23T09:38:30.385410Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-23T09:38:30.763013Z","level":"info","event":"--- MANUAL JOB: FETCH SPECIFIC DATES ---","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:30.763453Z","level":"info","event":"Dates: ['2025-11-17', '2025-11-18', '2025-11-20', '2025-11-21']","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:30.764737Z","level":"info","event":"--- Endpoint: minio:9000 ---","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:30.765089Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:30.765323Z","level":"info","event":"🚀 Processing: AAPL","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:30.765498Z","level":"info","event":"   📅 Getting data for: 2025-11-17...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:31.994035Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-17/symbol=AAPL/manual_20251123T093831Z.jsonl (390 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:36.995426Z","level":"info","event":"   📅 Getting data for: 2025-11-18...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:37.478606Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-18/symbol=AAPL/manual_20251123T093837Z.jsonl (390 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:43.479651Z","level":"info","event":"   📅 Getting data for: 2025-11-20...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:43.954403Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-20/symbol=AAPL/manual_20251123T093843Z.jsonl (390 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:47.957105Z","level":"info","event":"   📅 Getting data for: 2025-11-21...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:48.398766Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-21/symbol=AAPL/manual_20251123T093848Z.jsonl (390 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:38:51.415535Z","level":"info","event":"⏳ Nghỉ 10s trước mã tiếp theo...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:01.415729Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:01.416448Z","level":"info","event":"🚀 Processing: MSFT","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:01.416933Z","level":"info","event":"   📅 Getting data for: 2025-11-17...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:02.089684Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-17/symbol=MSFT/manual_20251123T093902Z.jsonl (391 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:17.936501Z","level":"info","event":"   📅 Getting data for: 2025-11-18...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:18.429369Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-18/symbol=MSFT/manual_20251123T094018Z.jsonl (391 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:21.429643Z","level":"info","event":"   📅 Getting data for: 2025-11-20...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:21.911428Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-20/symbol=MSFT/manual_20251123T094021Z.jsonl (391 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:16.065209Z","level":"info","event":"   📅 Getting data for: 2025-11-21...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:16.507766Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-21/symbol=MSFT/manual_20251123T093916Z.jsonl (391 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:22.488067Z","level":"info","event":"⏳ Nghỉ 10s trước mã tiếp theo...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:32.491316Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:32.491796Z","level":"info","event":"🚀 Processing: META","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:32.492130Z","level":"info","event":"   📅 Getting data for: 2025-11-17...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:32.958081Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-17/symbol=META/manual_20251123T093932Z.jsonl (391 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:37.957713Z","level":"info","event":"   📅 Getting data for: 2025-11-18...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:38.447402Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-18/symbol=META/manual_20251123T093938Z.jsonl (391 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:42.451758Z","level":"info","event":"   📅 Getting data for: 2025-11-20...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:42.943203Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-20/symbol=META/manual_20251123T093942Z.jsonl (391 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:45.937848Z","level":"info","event":"   📅 Getting data for: 2025-11-21...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:46.396127Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-21/symbol=META/manual_20251123T093946Z.jsonl (391 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:39:52.397685Z","level":"info","event":"⏳ Nghỉ 10s trước mã tiếp theo...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:02.398483Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:02.398964Z","level":"info","event":"🚀 Processing: GOOGL","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:02.399213Z","level":"info","event":"   📅 Getting data for: 2025-11-17...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:03.034123Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-17/symbol=GOOGL/manual_20251123T094002Z.jsonl (390 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:09.033473Z","level":"info","event":"   📅 Getting data for: 2025-11-18...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:09.523413Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-18/symbol=GOOGL/manual_20251123T094009Z.jsonl (390 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:14.524417Z","level":"info","event":"   📅 Getting data for: 2025-11-20...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:14.965619Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-20/symbol=GOOGL/manual_20251123T094014Z.jsonl (390 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:17.983100Z","level":"info","event":"   📅 Getting data for: 2025-11-21...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:18.432286Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-21/symbol=GOOGL/manual_20251123T094018Z.jsonl (390 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:21.409797Z","level":"info","event":"⏳ Nghỉ 10s trước mã tiếp theo...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:31.414960Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:31.415435Z","level":"info","event":"🚀 Processing: AMZN","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:31.415727Z","level":"info","event":"   📅 Getting data for: 2025-11-17...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:31.898653Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-17/symbol=AMZN/manual_20251123T094031Z.jsonl (390 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:36.918552Z","level":"info","event":"   📅 Getting data for: 2025-11-18...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:37.368181Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-18/symbol=AMZN/manual_20251123T094037Z.jsonl (390 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:42.366430Z","level":"info","event":"   📅 Getting data for: 2025-11-20...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:42.809465Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-20/symbol=AMZN/manual_20251123T094042Z.jsonl (390 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:48.794991Z","level":"info","event":"   📅 Getting data for: 2025-11-21...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:40:49.293038Z","level":"info","event":"      ✅ Uploaded: bronze1/stocks_intraday/date_ny=2025-11-21/symbol=AMZN/manual_20251123T094049Z.jsonl (390 rows)","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:42:05.155384Z","level":"info","event":"⏳ Nghỉ 10s trước mã tiếp theo...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:42:15.155719Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

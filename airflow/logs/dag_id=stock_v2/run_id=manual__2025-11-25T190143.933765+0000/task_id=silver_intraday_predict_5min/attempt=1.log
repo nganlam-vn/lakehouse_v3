@@ -1,0 +1,5 @@
+{"timestamp":"2025-11-25T19:09:15.647804Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-25T19:09:15.649728Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-25T19:09:20.584369Z","level":"info","event":"✅ Models Loaded Successfully","logger":"task.stdout"}
+{"timestamp":"2025-11-25T19:09:23.786407Z","level":"info","event":"DB Error: IO Error: DeltaKernel ObjectStoreError (8): Error interacting with object store: Generic S3 error: Error performing PUT http://169.254.169.254/latest/api/token in 3.042445949s, after 10 retries, max_retries: 10, retry_timeout: 180s  - HTTP error: error sending request","logger":"task.stdout"}
+{"timestamp":"2025-11-25T19:09:23.788426Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

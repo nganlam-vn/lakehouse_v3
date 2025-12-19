@@ -1,0 +1,14 @@
+{"timestamp":"2025-11-22T19:20:41.199669Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-22T19:20:41.201439Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_train_dag.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-22T19:20:46.516012Z","level":"info","event":"Tổng số mẫu huấn luyện: 850","logger":"task.stdout"}
+{"timestamp":"2025-11-22T19:21:15.153667Z","level":"info","event":"Epoch   0 | Val loss: 0.0709490","logger":"task.stdout"}
+{"timestamp":"2025-11-22T19:21:29.751937Z","level":"info","event":"Epoch  20 | Val loss: 0.0002180","logger":"task.stdout"}
+{"timestamp":"2025-11-22T19:21:42.132474Z","level":"info","event":"Epoch  40 | Val loss: 0.0004097","logger":"task.stdout"}
+{"timestamp":"2025-11-22T19:21:53.761523Z","level":"info","event":"Epoch  60 | Val loss: 0.0000918","logger":"task.stdout"}
+{"timestamp":"2025-11-22T19:22:12.209489Z","level":"info","event":"Epoch  80 | Val loss: 0.0003359","logger":"task.stdout"}
+{"timestamp":"2025-11-22T19:22:25.717330Z","level":"info","event":"Epoch 100 | Val loss: 0.0431665","logger":"task.stdout"}
+{"timestamp":"2025-11-22T19:22:38.198508Z","level":"info","event":"Uploaded → s3://models/lstm/v1/model.pth","logger":"task.stdout"}
+{"timestamp":"2025-11-22T19:22:38.271576Z","level":"info","event":"Uploaded → s3://models/lstm/v1/scaler.pkl","logger":"task.stdout"}
+{"timestamp":"2025-11-22T19:22:38.330146Z","level":"info","event":"Uploaded → s3://models/lstm/v1/metadata.json","logger":"task.stdout"}
+{"timestamp":"2025-11-22T19:22:38.330820Z","level":"info","event":"TRAIN HOÀN TẤT – MODEL ĐÃ LÊN MINIO!","logger":"task.stdout"}
+{"timestamp":"2025-11-22T19:22:38.373389Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

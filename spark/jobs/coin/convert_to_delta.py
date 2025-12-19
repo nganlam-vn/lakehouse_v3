@@ -160,6 +160,7 @@ def main():
         df.write.format("delta")
         .partitionBy("dt_record_to_bronze_date")
         .mode("append")
+        .option("mergeSchema", "true")
         .save(DST_PATH)
     )
 

@@ -1,0 +1,27 @@
+{"timestamp":"2025-11-21T16:52:43.380581Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-21T16:52:43.381900Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-21T16:52:44.281132Z","level":"info","event":"Collector start | interval=5min | batches=3","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:52:44.281760Z","level":"info","event":"Batch 1/3: ['AAPL', 'MSFT']","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:52:45.385164Z","level":"info","event":"AAPL: infer trading date = 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:52:45.386962Z","level":"info","event":"AAPL: fetched 100 records for 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:52:45.465989Z","level":"info","event":"uploaded s3://warehouse/bronze1/stocks_intraday/date_ny=2025-11-20/symbol=AAPL/ts_20251121T165245Z.json (25927 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:52:45.466483Z","level":"info","event":"AAPL: uploaded 100 recs","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:53:10.340402Z","level":"info","event":"MSFT: infer trading date = 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:53:10.343176Z","level":"info","event":"MSFT: fetched 100 records for 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:53:10.411167Z","level":"info","event":"uploaded s3://warehouse/bronze1/stocks_intraday/date_ny=2025-11-20/symbol=MSFT/ts_20251121T165310Z.json (25971 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:53:10.411628Z","level":"info","event":"MSFT: uploaded 100 recs","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:54:42.431040Z","level":"info","event":"Batch 2/3: ['META', 'GOOGL']","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:54:43.041915Z","level":"info","event":"META: infer trading date = 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:54:43.044759Z","level":"info","event":"META: fetched 100 records for 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:54:43.174003Z","level":"info","event":"uploaded s3://warehouse/bronze1/stocks_intraday/date_ny=2025-11-20/symbol=META/ts_20251121T165443Z.json (25940 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:54:43.174673Z","level":"info","event":"META: uploaded 100 recs","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:56:15.424581Z","level":"info","event":"GOOGL: infer trading date = 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:56:15.428240Z","level":"info","event":"GOOGL: fetched 100 records for 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:56:15.522941Z","level":"info","event":"uploaded s3://warehouse/bronze1/stocks_intraday/date_ny=2025-11-20/symbol=GOOGL/ts_20251121T165615Z.json (26059 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:56:15.523399Z","level":"info","event":"GOOGL: uploaded 100 recs","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:56:38.071224Z","level":"info","event":"Batch 3/3: ['AMZN']","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:56:43.691161Z","level":"info","event":"AMZN: infer trading date = 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:56:43.693786Z","level":"info","event":"AMZN: fetched 100 records for 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:56:43.762356Z","level":"info","event":"uploaded s3://warehouse/bronze1/stocks_intraday/date_ny=2025-11-20/symbol=AMZN/ts_20251121T165643Z.json (25969 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:56:43.762972Z","level":"info","event":"AMZN: uploaded 100 recs","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:57:05.750790Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

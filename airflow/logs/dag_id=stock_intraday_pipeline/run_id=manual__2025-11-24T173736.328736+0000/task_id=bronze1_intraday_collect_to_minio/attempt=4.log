@@ -1,0 +1,8 @@
+{"timestamp":"2025-11-24T17:39:05.691753Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T17:39:05.692812Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T17:39:06.302791Z","level":"info","event":"--- INCREMENTAL JOB: LAST 3 HOURS ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:39:06.303240Z","level":"info","event":"--- Endpoint: minio:9000 ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:39:06.304503Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:39:06.304836Z","level":"info","event":"Fetching last 3 hours for: AAPL","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:39:07.371080Z","level":"info","event":"API Error: 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-11-24&date_to=2025-11-24&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:39:09.362542Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

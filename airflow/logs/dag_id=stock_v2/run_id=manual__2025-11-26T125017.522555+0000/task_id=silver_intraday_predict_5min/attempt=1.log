@@ -1,0 +1,12 @@
+{"timestamp":"2025-11-26T12:54:45.210540Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-26T12:54:45.212480Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-26T12:54:49.315482Z","level":"info","event":"✅ Models & Scaler Ready!","logger":"task.stdout"}
+{"timestamp":"2025-11-26T12:54:49.523329Z","level":"info","event":"KẾT QUẢ HYBRID V2 (1 mã): {","logger":"task.stdout"}
+{"timestamp":"2025-11-26T12:54:49.524669Z","level":"info","event":"  \"AAPL\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-26T12:54:49.524966Z","level":"info","event":"    \"Time\": \"17:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-26T12:54:49.525176Z","level":"info","event":"    \"Target_1H\": \"18:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-26T12:54:49.525354Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-26T12:54:49.525555Z","level":"info","event":"    \"Xac_Suat\": \"9.9%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-26T12:54:49.525887Z","level":"info","event":"  }","logger":"task.stdout"}
+{"timestamp":"2025-11-26T12:54:49.526163Z","level":"info","event":"}","logger":"task.stdout"}
+{"timestamp":"2025-11-26T12:54:49.523540Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

@@ -1,0 +1,22 @@
+{"timestamp":"2025-11-28T00:12:23.020850Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-28T00:12:23.022001Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-28T00:13:44.826250Z","level":"info","event":"Số mẫu huấn luyện: 3345","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:12:57.994243Z","level":"info","event":"   Epoch   0 | Train Loss: 0.6891 | Val Loss: 0.7151","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:13:15.576217Z","level":"info","event":"   Epoch  10 | Train Loss: 0.6432 | Val Loss: 0.7587","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:13:33.470201Z","level":"info","event":"   Epoch  20 | Train Loss: 0.6802 | Val Loss: 0.7255","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:13:52.088120Z","level":"info","event":"   Epoch  30 | Train Loss: 0.6800 | Val Loss: 0.7337","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:09.988014Z","level":"info","event":"   Epoch  40 | Train Loss: 0.6815 | Val Loss: 0.7227","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:25.732328Z","level":"info","event":"✅ Đã hoàn thành.(Val Loss: 0.6914)","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:28.930273Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:28.930738Z","level":"info","event":"==================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:28.930980Z","level":"info","event":"KẾT QUẢ ĐÁNH GIÁ (Validation Set)","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:28.931154Z","level":"info","event":"==================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:28.972202Z","level":"info","event":"Accuracy Tổng : 49.63%","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:28.972616Z","level":"info","event":"F1-Score Tổng : 54.40%","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:28.972779Z","level":"info","event":"--------------------------------------------------","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:29.863542Z","level":"info","event":"Uploaded: hybrid/v2_tech_indicators/lstm_extractor.pth","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:30.344201Z","level":"info","event":"Uploaded: hybrid/v2_tech_indicators/xgboost_cls.json","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:30.892875Z","level":"info","event":"Uploaded: hybrid/v2_tech_indicators/scaler.pkl","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:31.068156Z","level":"info","event":"Uploaded: hybrid/v2_tech_indicators/metadata.json","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:31.068813Z","level":"info","event":"✅ Train Hoàn Tất!","logger":"task.stdout"}
+{"timestamp":"2025-11-28T00:14:31.088580Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

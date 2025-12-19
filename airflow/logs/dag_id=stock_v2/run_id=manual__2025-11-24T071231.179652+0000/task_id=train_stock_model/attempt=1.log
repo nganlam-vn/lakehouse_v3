@@ -1,0 +1,8 @@
+{"timestamp":"2025-11-24T07:14:00.764954Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T07:14:00.766258Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T07:14:06.362155Z","level":"info","event":"🚀 Bắt đầu huấn luyện HYBRID v2 (LSTM + XGBoost) - Có đánh giá chi tiết.","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:14:06.819083Z","level":"info","event":"⚙️ Đang xử lý dữ liệu & Tính toán chỉ báo...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:14:07.195662Z","level":"info","event":"📊 Số mẫu huấn luyện: 20226","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:14:07.695239Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:14:07.695678Z","level":"info","event":"--- Giai đoạn 1: Train LSTM (Feature Extractor) ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:13:04.864257Z","level":"info","event":"   LSTM Epoch 0: Loss=0.6928","logger":"task.stdout"}

@@ -1,0 +1,20 @@
+{"timestamp":"2025-11-24T05:15:23.068538Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T05:15:23.069975Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T05:15:24.348934Z","level":"info","event":"--- INCREMENTAL JOB: LAST 3 HOURS ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:24.349390Z","level":"info","event":"--- Endpoint: minio:9000 ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:24.349931Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:24.350172Z","level":"info","event":"Fetching last 3 hours for: AAPL","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:25.578977Z","level":"info","event":"   (No data received from API)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:27.575672Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:27.576316Z","level":"info","event":"Fetching last 3 hours for: MSFT","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:28.027487Z","level":"info","event":"   (No data received from API)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:30.028114Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:30.029406Z","level":"info","event":"Fetching last 3 hours for: META","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:30.383143Z","level":"info","event":"   (No data received from API)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:32.385842Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:32.386341Z","level":"info","event":"Fetching last 3 hours for: GOOGL","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:32.799431Z","level":"info","event":"   (No data received from API)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:34.799610Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:34.800057Z","level":"info","event":"Fetching last 3 hours for: AMZN","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:35.327152Z","level":"info","event":"   (No data received from API)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:15:37.340517Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

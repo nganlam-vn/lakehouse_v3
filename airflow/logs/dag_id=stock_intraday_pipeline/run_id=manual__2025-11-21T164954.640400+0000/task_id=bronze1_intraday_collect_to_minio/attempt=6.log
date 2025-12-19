@@ -1,0 +1,14 @@
+{"timestamp":"2025-11-21T16:51:22.058297Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-21T16:51:22.060912Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-21T16:51:22.327211Z","level":"info","event":"Collector start | interval=5min | batches=3","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:51:22.327854Z","level":"info","event":"Batch 1/3: ['AAPL', 'MSFT']","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:51:25.056519Z","level":"info","event":"AAPL: infer trading date = 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:51:25.057955Z","level":"info","event":"AAPL: fetched 100 records for 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:51:25.184549Z","level":"info","event":"uploaded s3://warehouse/bronze1/stocks_intraday/date_ny=2025-11-20/symbol=AAPL/ts_20251121T165125Z.json (25927 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:51:25.184924Z","level":"info","event":"AAPL: uploaded 100 recs","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:51:48.564879Z","level":"info","event":"MSFT: infer trading date = 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:51:48.566535Z","level":"info","event":"MSFT: fetched 100 records for 2025-11-20","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:51:48.767225Z","level":"info","event":"uploaded s3://warehouse/bronze1/stocks_intraday/date_ny=2025-11-20/symbol=MSFT/ts_20251121T165148Z.json (25971 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:51:48.773522Z","level":"info","event":"MSFT: uploaded 100 recs","logger":"task.stdout"}
+{"timestamp":"2025-11-21T16:53:52.961351Z","level":"error","event":"Server indicated the task shouldn't be running anymore. Terminating process","detail":{"detail":{"reason":"running_elsewhere","message":"TI is already running elsewhere","current_hostname":"3b1f7a09f212","current_pid":488}},"logger":"task"}
+{"timestamp":"2025-11-21T16:52:49.523427Z","level":"error","event":"Task killed!","logger":"task"}

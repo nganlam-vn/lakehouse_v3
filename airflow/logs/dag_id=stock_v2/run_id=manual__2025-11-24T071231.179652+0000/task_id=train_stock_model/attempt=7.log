@@ -1,0 +1,42 @@
+{"timestamp":"2025-11-24T07:14:49.675006Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T07:14:49.677754Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T07:14:53.234641Z","level":"info","event":"🚀 Bắt đầu huấn luyện HYBRID v2 (LSTM + XGBoost) - Có đánh giá chi tiết.","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:14:55.018126Z","level":"info","event":"⚙️ Đang xử lý dữ liệu & Tính toán chỉ báo...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:14:55.158464Z","level":"info","event":"📊 Số mẫu huấn luyện: 20226","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:14:55.166208Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:14:55.166636Z","level":"info","event":"--- Giai đoạn 1: Train LSTM (Feature Extractor) ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:15:10.606272Z","level":"info","event":"   LSTM Epoch 0: Loss=0.6932","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:16:08.733165Z","level":"info","event":"   LSTM Epoch 10: Loss=0.6841","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:01.276194Z","level":"info","event":"   LSTM Epoch 20: Loss=0.6894","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:19:00.136230Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:19:00.136920Z","level":"info","event":"--- Giai đoạn 2: Train XGBoost (Classifier) ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:55.078465Z","level":"warning","event":"[07:17:55] WARNING: /workspace/src/learner.cc:790: \nParameters: { \"use_label_encoder\" } are not used.\n","category":"UserWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/xgboost/training.py","lineno":199,"logger":"py.warnings"}
+{"timestamp":"2025-11-24T07:17:56.743949Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:56.744391Z","level":"info","event":"==================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:56.744862Z","level":"info","event":"📊 KẾT QUẢ ĐÁNH GIÁ MÔ HÌNH (Validation Set)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:56.745119Z","level":"info","event":"==================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.111131Z","level":"info","event":"🏆 Accuracy Tổng : 50.99%","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.111617Z","level":"info","event":"⚖️  F1-Score Tổng : 48.13%","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.111841Z","level":"info","event":"--------------------------------------------------","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.112123Z","level":"info","event":"📝 Classification Report:","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.116891Z","level":"info","event":"              precision    recall  f1-score   support","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.117330Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.117581Z","level":"info","event":"    GIẢM (0)       0.54      0.53      0.54      2139","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.117840Z","level":"info","event":"    TĂNG (1)       0.48      0.48      0.48      1907","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.118065Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.118266Z","level":"info","event":"    accuracy                           0.51      4046","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.118416Z","level":"info","event":"   macro avg       0.51      0.51      0.51      4046","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.118570Z","level":"info","event":"weighted avg       0.51      0.51      0.51      4046","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.118759Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.309628Z","level":"info","event":"--------------------------------------------------","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.310133Z","level":"info","event":"🧩 Ma trận nhầm lẫn (Confusion Matrix):","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.310648Z","level":"info","event":"   [Thực tế GIẢM]  Đoán đúng: 1143  |  Sai thành Tăng: 996","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.311034Z","level":"info","event":"   [Thực tế TĂNG]  Sai thành Giảm: 987  |  Đoán đúng: 920","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.311444Z","level":"info","event":"==================================================","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:57.311918Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:17:59.220842Z","level":"info","event":"   💾 Uploaded: hybrid/v2_tech_indicators/lstm_extractor.pth","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:00.550511Z","level":"info","event":"   💾 Uploaded: hybrid/v2_tech_indicators/xgboost_cls.json","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:01.350510Z","level":"info","event":"   💾 Uploaded: hybrid/v2_tech_indicators/scaler.pkl","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:02.126364Z","level":"info","event":"   💾 Uploaded: hybrid/v2_tech_indicators/metadata.json","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:02.127108Z","level":"info","event":"✅ Toàn bộ quá trình Train & Upload hoàn tất!","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:02.155380Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

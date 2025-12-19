@@ -1,0 +1,11 @@
+{"timestamp":"2025-11-26T13:07:00.350853Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-26T13:07:00.353864Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-26T13:07:03.821572Z","level":"info","event":" (1 mã): {","logger":"task.stdout"}
+{"timestamp":"2025-11-26T13:07:03.822101Z","level":"info","event":"  \"AAPL\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-26T13:07:03.828047Z","level":"info","event":"    \"Time\": \"17:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-26T13:07:03.828680Z","level":"info","event":"    \"Target_1H\": \"18:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-26T13:07:03.828981Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-26T13:07:03.829264Z","level":"info","event":"    \"Xac_Suat\": \"31.7%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-26T13:07:03.829565Z","level":"info","event":"  }","logger":"task.stdout"}
+{"timestamp":"2025-11-26T13:07:03.829880Z","level":"info","event":"}","logger":"task.stdout"}
+{"timestamp":"2025-11-26T13:07:03.821679Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

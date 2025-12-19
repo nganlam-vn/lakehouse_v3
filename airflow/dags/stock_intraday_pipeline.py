@@ -1,14 +1,15 @@
+#stock_intraday_pipeline.py
 from airflow import DAG
 from airflow.providers.standard.operators.python import PythonOperator
 from airflow.providers.standard.operators.bash import BashOperator
 from datetime import datetime, timedelta
 
 # Collector đã viết ở trên
-from tasks.ingestion.stock_intraday_collector import main as collect_intraday
+from tasks.ingestion.stock_intraday_collector import run_ingest_pipeline as collect_intraday
 
 default_args = {
     "owner": "airflow",
-    "retries": 5,                           # Thử lại 5 lần nếu lỗi
+    "retries": 0,                           # Thử lại 1 lần nếu lỗi
     "retry_delay": timedelta(minutes=1),     # Mỗi lần cách nhau 1 phút
     "depends_on_past": False,
 }
@@ -69,4 +70,11 @@ with DAG(
         ),
     )
 
-    bronze1_collect_task >> bronze2_convert_task >> silver_transform_task
+
+    # silver_predict_task = PythonOperator(
+    #     task_id="silver_intraday_predict_5min",
+    #     python_callable=predict,
+    #     op_kwargs={},
+    # )
+
+    bronze1_collect_task >> bronze2_convert_task >> silver_transform_task 

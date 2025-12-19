@@ -1,0 +1,5 @@
+{"timestamp":"2025-11-23T09:56:54.793123Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-23T09:56:54.800847Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_train_dag.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-23T09:57:05.944011Z","level":"info","event":"Bắt đầu quy trình huấn luyện Multi-step Classification.","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:57:08.524949Z","level":"info","event":"Tạo 5 nhãn xu hướng (target) cho các ngày T+1 đến T+5...","logger":"task.stdout"}
+{"timestamp":"2025-11-23T09:57:08.536672Z","level":"info","event":"Tổng số mẫu huấn luyện: 45","logger":"task.stdout"}

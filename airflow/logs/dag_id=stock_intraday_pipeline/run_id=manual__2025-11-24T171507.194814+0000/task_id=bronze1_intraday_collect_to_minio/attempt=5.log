@@ -1,0 +1,126 @@
+{"timestamp":"2025-11-24T17:23:07.966523Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T17:23:07.971397Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T17:23:08.422296Z","level":"info","event":"--- START BACKFILL JOB (Target: 365 days) ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:08.422673Z","level":"info","event":"--- Endpoint: minio:9000 ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:08.424017Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:08.424281Z","level":"info","event":"🚀 Bắt đầu lấy lịch sử cho: AAPL","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:08.424509Z","level":"info","event":"   ... Requesting chunk: 2025-11-17 -> 2025-11-24","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:09.764641Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-24/symbol=AAPL/stockdata_20251124T172309Z.jsonl (390 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:09.765041Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:20.762330Z","level":"info","event":"   ... Requesting chunk: 2025-11-10 -> 2025-11-17","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:21.801931Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-17/symbol=AAPL/stockdata_20251124T172321Z.jsonl (1954 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:21.802380Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:36.789919Z","level":"info","event":"   ... Requesting chunk: 2025-11-03 -> 2025-11-10","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:37.971780Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-10/symbol=AAPL/stockdata_20251124T172448Z.jsonl (2345 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:37.972411Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:51.949545Z","level":"info","event":"   ... Requesting chunk: 2025-10-27 -> 2025-11-03","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:53.114822Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-03/symbol=AAPL/stockdata_20251124T172352Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:23:53.115261Z","level":"info","event":"      💤 Nghỉ 12s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:05.120507Z","level":"info","event":"   ... Requesting chunk: 2025-10-20 -> 2025-10-27","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:05.982968Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-10-27/symbol=AAPL/stockdata_20251124T172405Z.jsonl (782 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:05.987564Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:18.979679Z","level":"info","event":"   ... Requesting chunk: 2025-10-13 -> 2025-10-20","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:19.367498Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:19.367916Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:30.413195Z","level":"info","event":"   ... Requesting chunk: 2025-10-06 -> 2025-10-13","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:31.923600Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-10-13/symbol=AAPL/stockdata_20251124T172431Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:31.924142Z","level":"info","event":"      💤 Nghỉ 12s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:43.948447Z","level":"info","event":"   ... Requesting chunk: 2025-09-29 -> 2025-10-06","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:45.315357Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-10-06/symbol=AAPL/stockdata_20251124T172445Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:45.315756Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:24:55.313121Z","level":"info","event":"   ... Requesting chunk: 2025-09-22 -> 2025-09-29","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:06.786346Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-09-29/symbol=AAPL/stockdata_20251124T172456Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:06.786896Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:25:10.344861Z","level":"info","event":"   ... Requesting chunk: 2025-09-15 -> 2025-09-22","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:25:11.450030Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-09-22/symbol=AAPL/stockdata_20251124T172511Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:25:11.458884Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:36.891223Z","level":"info","event":"   ... Requesting chunk: 2025-09-08 -> 2025-09-15","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:25:27.492023Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-09-15/symbol=AAPL/stockdata_20251124T172527Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:25:27.493365Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:25:38.514548Z","level":"info","event":"   ... Requesting chunk: 2025-09-01 -> 2025-09-08","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:25:40.912961Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-09-08/symbol=AAPL/stockdata_20251124T172540Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:25:40.913368Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:25:50.891670Z","level":"info","event":"   ... Requesting chunk: 2025-08-25 -> 2025-09-01","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:25:52.551204Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-09-01/symbol=AAPL/stockdata_20251124T172552Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:25:52.551564Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:03.556902Z","level":"info","event":"   ... Requesting chunk: 2025-08-18 -> 2025-08-25","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:04.598333Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-08-25/symbol=AAPL/stockdata_20251124T172604Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:04.598721Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:17.589737Z","level":"info","event":"   ... Requesting chunk: 2025-08-11 -> 2025-08-18","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:18.821216Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-08-18/symbol=AAPL/stockdata_20251124T172618Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:18.821722Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:28.818685Z","level":"info","event":"   ... Requesting chunk: 2025-08-04 -> 2025-08-11","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:30.043758Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-08-11/symbol=AAPL/stockdata_20251124T172629Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:30.044279Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:41.065151Z","level":"info","event":"   ... Requesting chunk: 2025-07-28 -> 2025-08-04","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:41.427521Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-07-28 -> 2025-08-04): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-07-28&date_to=2025-08-04&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:41.429093Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:41.429518Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:52.405570Z","level":"info","event":"   ... Requesting chunk: 2025-07-21 -> 2025-07-28","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:52.767277Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-07-21 -> 2025-07-28): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-07-21&date_to=2025-07-28&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:52.767648Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:26:52.767929Z","level":"info","event":"      💤 Nghỉ 12s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:04.792491Z","level":"info","event":"   ... Requesting chunk: 2025-07-14 -> 2025-07-21","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:05.168796Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-07-14 -> 2025-07-21): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-07-14&date_to=2025-07-21&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:05.186920Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:05.189915Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:16.146872Z","level":"info","event":"   ... Requesting chunk: 2025-07-07 -> 2025-07-14","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:16.629322Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-07-07 -> 2025-07-14): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-07-07&date_to=2025-07-14&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:16.629859Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:16.630143Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:26.631621Z","level":"info","event":"   ... Requesting chunk: 2025-06-30 -> 2025-07-07","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:26.998176Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-06-30 -> 2025-07-07): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-06-30&date_to=2025-07-07&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:26.999516Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:27.001565Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:36.996814Z","level":"info","event":"   ... Requesting chunk: 2025-06-23 -> 2025-06-30","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:37.352484Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-06-23 -> 2025-06-30): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-06-23&date_to=2025-06-30&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:37.352954Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:37.353173Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:51.373653Z","level":"info","event":"   ... Requesting chunk: 2025-06-16 -> 2025-06-23","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:51.800641Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-06-16 -> 2025-06-23): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-06-16&date_to=2025-06-23&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:51.801059Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:27:51.801305Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:04.801039Z","level":"info","event":"   ... Requesting chunk: 2025-06-09 -> 2025-06-16","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:05.204982Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-06-09 -> 2025-06-16): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-06-09&date_to=2025-06-16&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:05.206054Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:05.206590Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:19.180941Z","level":"info","event":"   ... Requesting chunk: 2025-06-02 -> 2025-06-09","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:19.547671Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-06-02 -> 2025-06-09): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-06-02&date_to=2025-06-09&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:19.548080Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:19.548307Z","level":"info","event":"      💤 Nghỉ 12s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:31.551239Z","level":"info","event":"   ... Requesting chunk: 2025-05-26 -> 2025-06-02","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:31.902950Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-05-26 -> 2025-06-02): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-05-26&date_to=2025-06-02&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:31.903325Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:31.903550Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:45.900251Z","level":"info","event":"   ... Requesting chunk: 2025-05-19 -> 2025-05-26","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:46.349262Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-05-19 -> 2025-05-26): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-05-19&date_to=2025-05-26&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:46.349730Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:46.350033Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:59.340518Z","level":"info","event":"   ... Requesting chunk: 2025-05-12 -> 2025-05-19","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:59.696611Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-05-12 -> 2025-05-19): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-05-12&date_to=2025-05-19&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:59.697387Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:28:59.697868Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:10.708930Z","level":"info","event":"   ... Requesting chunk: 2025-05-05 -> 2025-05-12","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:11.061566Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-05-05 -> 2025-05-12): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-05-05&date_to=2025-05-12&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:11.062981Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:11.064106Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:21.054128Z","level":"info","event":"   ... Requesting chunk: 2025-04-28 -> 2025-05-05","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:21.420443Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-04-28 -> 2025-05-05): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-04-28&date_to=2025-05-05&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:21.420965Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:21.421295Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:35.429860Z","level":"info","event":"   ... Requesting chunk: 2025-04-21 -> 2025-04-28","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:35.790655Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-04-21 -> 2025-04-28): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-04-21&date_to=2025-04-28&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:35.791236Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:35.791661Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:50.786095Z","level":"info","event":"   ... Requesting chunk: 2025-04-14 -> 2025-04-21","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:51.138885Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-04-14 -> 2025-04-21): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-04-14&date_to=2025-04-21&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:51.139276Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:29:51.139563Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:31:16.582073Z","level":"info","event":"   ... Requesting chunk: 2025-04-07 -> 2025-04-14","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:31:16.957720Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-04-07 -> 2025-04-14): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-04-07&date_to=2025-04-14&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:31:16.958191Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:31:16.958471Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:30:16.508771Z","level":"info","event":"   ... Requesting chunk: 2025-03-31 -> 2025-04-07","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:30:16.870706Z","level":"info","event":"   ❌ Lỗi khi lấy AAPL (2025-03-31 -> 2025-04-07): 402 Client Error: Payment Required for url: https://api.stockdata.org/v1/data/intraday?api_token=YK7nIN9ZdepKCMnV1NB6o12PWEza0wLXHjKeg0QD&symbols=AAPL&interval=minute&date_from=2025-03-31&date_to=2025-04-07&sort=asc","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:30:16.871158Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T17:30:16.871412Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}

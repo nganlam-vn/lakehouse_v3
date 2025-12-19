@@ -1,0 +1,10 @@
+{"timestamp":"2025-11-20T19:18:34.496922Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-20T19:18:34.498208Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/finance_news_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-20T19:18:37.264329Z","level":"info","event":"Symbol AAPL: 67 bài","logger":"task.stdout"}
+{"timestamp":"2025-11-20T19:18:38.805346Z","level":"info","event":"Symbol MSFT: 98 bài","logger":"task.stdout"}
+{"timestamp":"2025-11-20T19:18:40.363482Z","level":"info","event":"Symbol META: 98 bài","logger":"task.stdout"}
+{"timestamp":"2025-11-20T19:18:41.971250Z","level":"info","event":"Symbol GOOGL: 98 bài","logger":"task.stdout"}
+{"timestamp":"2025-11-20T19:19:51.882894Z","level":"info","event":"Symbol AMZN: 94 bài","logger":"task.stdout"}
+{"timestamp":"2025-11-20T19:18:44.562426Z","level":"info","event":"Tổng số bài: 455","logger":"task.stdout"}
+{"timestamp":"2025-11-20T19:18:44.563979Z","level":"info","event":"Done. Returned value was: 455","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2025-11-20T19:18:44.564345Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019aa2b4-1c13-73f0-a995-90b37468eab1'), task_id='collect_finance_news', dag_id='newsapi_finance_pipeline', run_id='manual__2025-11-20T19:18:23.936789+00:00', try_number=2, dag_version_id=UUID('019aa20a-f3c6-7964-aa5a-bb157ed71186'), map_index=-1, hostname='41b46243eb4e', context_carrier={}, task=<Task(PythonOperator): collect_finance_news>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=10, start_date=datetime.datetime(2025, 11, 20, 19, 18, 34, 161242, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1352}

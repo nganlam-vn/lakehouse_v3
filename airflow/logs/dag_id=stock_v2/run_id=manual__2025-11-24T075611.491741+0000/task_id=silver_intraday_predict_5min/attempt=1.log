@@ -1,0 +1,35 @@
+{"timestamp":"2025-11-24T08:00:36.791740Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T08:00:36.794590Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T08:00:14.179870Z","level":"info","event":"KẾT QUẢ: {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.180645Z","level":"info","event":"  \"AAPL\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.181424Z","level":"info","event":"    \"Time\": \"08:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.181746Z","level":"info","event":"    \"Target_3H\": \"11:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.181978Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.182192Z","level":"info","event":"    \"Xac_Suat\": \"18.7%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.182469Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.182694Z","level":"info","event":"  \"AMZN\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.182907Z","level":"info","event":"    \"Time\": \"08:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.183088Z","level":"info","event":"    \"Target_3H\": \"11:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.183303Z","level":"info","event":"    \"Du_Bao\": \"TĂNG 🟢\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.183499Z","level":"info","event":"    \"Xac_Suat\": \"53.2%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.183725Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.183930Z","level":"info","event":"  \"GOOGL\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.184121Z","level":"info","event":"    \"Time\": \"08:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.184406Z","level":"info","event":"    \"Target_3H\": \"11:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.184581Z","level":"info","event":"    \"Du_Bao\": \"TĂNG 🟢\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.184769Z","level":"info","event":"    \"Xac_Suat\": \"53.8%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.184940Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.185115Z","level":"info","event":"  \"META\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.185319Z","level":"info","event":"    \"Time\": \"09:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.185507Z","level":"info","event":"    \"Target_3H\": \"12:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.185766Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.186015Z","level":"info","event":"    \"Xac_Suat\": \"35.5%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.186232Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.186444Z","level":"info","event":"  \"MSFT\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.186718Z","level":"info","event":"    \"Time\": \"09:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.186922Z","level":"info","event":"    \"Target_3H\": \"12:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.187170Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.187400Z","level":"info","event":"    \"Xac_Suat\": \"49.2%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.187621Z","level":"info","event":"  }","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.187823Z","level":"info","event":"}","logger":"task.stdout"}
+{"timestamp":"2025-11-24T08:00:14.180670Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

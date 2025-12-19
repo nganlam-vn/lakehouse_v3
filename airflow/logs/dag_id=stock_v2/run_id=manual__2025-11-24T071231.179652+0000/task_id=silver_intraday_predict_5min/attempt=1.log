@@ -1,0 +1,44 @@
+{"timestamp":"2025-11-24T07:18:03.782551Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T07:18:03.785812Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T07:18:50.459062Z","level":"info","event":"📥 Đang tải Resources (Hybrid v2)...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:50.631942Z","level":"info","event":"✅ Models & Scaler Ready!","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.661608Z","level":"info","event":"⚙️ Đang tính toán chỉ báo kỹ thuật...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.689255Z","level":"warning","event":"X does not have valid feature names, but StandardScaler was fitted with feature names","category":"UserWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py","lineno":2749,"logger":"py.warnings"}
+{"timestamp":"2025-11-24T07:18:51.804462Z","level":"warning","event":"X does not have valid feature names, but StandardScaler was fitted with feature names","category":"UserWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py","lineno":2749,"logger":"py.warnings"}
+{"timestamp":"2025-11-24T07:18:51.808790Z","level":"warning","event":"X does not have valid feature names, but StandardScaler was fitted with feature names","category":"UserWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py","lineno":2749,"logger":"py.warnings"}
+{"timestamp":"2025-11-24T07:18:51.811697Z","level":"warning","event":"X does not have valid feature names, but StandardScaler was fitted with feature names","category":"UserWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py","lineno":2749,"logger":"py.warnings"}
+{"timestamp":"2025-11-24T07:18:51.814449Z","level":"warning","event":"X does not have valid feature names, but StandardScaler was fitted with feature names","category":"UserWarning","filename":"/home/airflow/.local/lib/python3.12/site-packages/sklearn/utils/validation.py","lineno":2749,"logger":"py.warnings"}
+{"timestamp":"2025-11-24T07:18:51.816504Z","level":"info","event":"KẾT QUẢ HYBRID V2 (5 mã): {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.816802Z","level":"info","event":"  \"AAPL\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.817041Z","level":"info","event":"    \"Time\": \"08:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.817259Z","level":"info","event":"    \"Target_3H\": \"11:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.817710Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.818195Z","level":"info","event":"    \"Xac_Suat\": \"30.3%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.818644Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.818975Z","level":"info","event":"  \"AMZN\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.819276Z","level":"info","event":"    \"Time\": \"08:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.819760Z","level":"info","event":"    \"Target_3H\": \"11:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.820144Z","level":"info","event":"    \"Du_Bao\": \"TĂNG 🟢\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.820523Z","level":"info","event":"    \"Xac_Suat\": \"67.4%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.820810Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.821023Z","level":"info","event":"  \"GOOGL\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.821216Z","level":"info","event":"    \"Time\": \"08:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.821436Z","level":"info","event":"    \"Target_3H\": \"11:59\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.821645Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.821911Z","level":"info","event":"    \"Xac_Suat\": \"33.3%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.822164Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.822386Z","level":"info","event":"  \"META\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.822737Z","level":"info","event":"    \"Time\": \"09:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.823093Z","level":"info","event":"    \"Target_3H\": \"12:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.823404Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.823844Z","level":"info","event":"    \"Xac_Suat\": \"39.9%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.824200Z","level":"info","event":"  },","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.824494Z","level":"info","event":"  \"MSFT\": {","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.824700Z","level":"info","event":"    \"Time\": \"09:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.824920Z","level":"info","event":"    \"Target_3H\": \"12:00\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.825106Z","level":"info","event":"    \"Du_Bao\": \"GIẢM 🔴\",","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.825294Z","level":"info","event":"    \"Xac_Suat\": \"49.7%\"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.825475Z","level":"info","event":"  }","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.825658Z","level":"info","event":"}","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:18:51.816589Z","level":"info","event":"Done. Returned value was: {'AAPL': {'Time': '08:59', 'Target_3H': '11:59', 'Du_Bao': 'GIẢM 🔴', 'Xac_Suat': '30.3%'}, 'AMZN': {'Time': '08:59', 'Target_3H': '11:59', 'Du_Bao': 'TĂNG 🟢', 'Xac_Suat': '67.4%'}, 'GOOGL': {'Time': '08:59', 'Target_3H': '11:59', 'Du_Bao': 'GIẢM 🔴', 'Xac_Suat': '33.3%'}, 'META': {'Time': '09:00', 'Target_3H': '12:00', 'Du_Bao': 'GIẢM 🔴', 'Xac_Suat': '39.9%'}, 'MSFT': {'Time': '09:00', 'Target_3H': '12:00', 'Du_Bao': 'GIẢM 🔴', 'Xac_Suat': '49.7%'}}","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2025-11-24T07:18:51.816893Z","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('019ab4b4-fbdf-7c9e-ac23-c951a15247d9'), task_id='silver_intraday_predict_5min', dag_id='stock_v2', run_id='manual__2025-11-24T07:12:31.179652+00:00', try_number=1, dag_version_id=UUID('019ab43b-232f-7130-a8c3-deb6f8ce903f'), map_index=-1, hostname='54a490be73e8', context_carrier={}, task=<Task(PythonOperator): silver_intraday_predict_5min>, bundle_instance=LocalDagBundle(name=dags-folder), max_tries=10, start_date=datetime.datetime(2025, 11, 24, 7, 18, 3, 460529, tzinfo=datetime.timezone.utc), end_date=None, state=<TaskInstanceState.RUNNING: 'running'>, is_mapped=False, rendered_map_index=None)","logger":"task","filename":"task_runner.py","lineno":1352}

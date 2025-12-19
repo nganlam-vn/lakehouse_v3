@@ -1,0 +1,11 @@
+{"timestamp":"2025-11-24T07:34:37.681786Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T07:34:37.683989Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T07:34:41.294924Z","level":"info","event":"Số mẫu Train: 20226","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:34:55.110776Z","level":"info","event":"LSTM Epoch 0: Loss=0.6932","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:35:42.975429Z","level":"info","event":"LSTM Epoch 10: Loss=0.6859","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:36:27.393139Z","level":"info","event":"LSTM Epoch 20: Loss=0.6699","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:19.536951Z","level":"info","event":"LSTM Epoch 30: Loss=0.6265","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:37:49.607719Z","level":"info","event":"LSTM Epoch 40: Loss=0.5467","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:35.119101Z","level":"info","event":"XGBoost Result -> Accuracy: 54.23% | F1-Score: 52.76%","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:37.041497Z","level":"info","event":"✅ Hybrid Train V2 Hoàn Tất!","logger":"task.stdout"}
+{"timestamp":"2025-11-24T07:38:37.048215Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

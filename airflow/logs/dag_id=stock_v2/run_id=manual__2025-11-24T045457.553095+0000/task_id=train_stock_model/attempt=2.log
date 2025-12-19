@@ -1,0 +1,14 @@
+{"timestamp":"2025-11-24T04:58:56.989923Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T04:58:56.991340Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline-v2.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T04:59:00.232031Z","level":"info","event":"🚀 Bắt đầu huấn luyện INTRADAY (Dự báo 3 Giờ tới).","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:59:00.515539Z","level":"info","event":"Đang xử lý dữ liệu Intraday...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:59:00.620183Z","level":"info","event":"Phân bố nhãn: {0: 18580, 1: 18332}","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:59:00.703625Z","level":"info","event":"Số mẫu Train Intraday: 7325","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:59:06.717666Z","level":"info","event":"Bắt đầu training...","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:59:09.553029Z","level":"info","event":"Epoch 0: Loss=0.6938","logger":"task.stdout"}
+{"timestamp":"2025-11-24T04:59:35.986834Z","level":"info","event":"Epoch 10: Loss=0.6932","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:01:06.576749Z","level":"info","event":"Epoch 20: Loss=0.6906","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:00:15.325883Z","level":"info","event":"Epoch 30: Loss=0.6932","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:01:55.917740Z","level":"info","event":"Epoch 40: Loss=0.6932","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:01:17.505380Z","level":"info","event":"✅ Train Intraday Hoàn Tất!","logger":"task.stdout"}
+{"timestamp":"2025-11-24T05:01:17.516196Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

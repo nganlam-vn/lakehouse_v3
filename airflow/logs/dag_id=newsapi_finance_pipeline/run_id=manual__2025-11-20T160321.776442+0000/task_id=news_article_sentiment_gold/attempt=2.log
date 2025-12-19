@@ -1,0 +1,4 @@
+{"timestamp":"2025-11-20T16:33:17.434752Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-20T16:33:17.451912Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/finance_news_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-20T16:33:18.314683Z","level":"error","event":"Task not found in Dag during start up","dag_id":"newsapi_finance_pipeline","task_id":"news_article_sentiment_gold","bundle":"BundleInfo(name='dags-folder', version=None)","path":"finance_news_pipeline.py","logger":"task","filename":"task_runner.py","lineno":643}
+{"timestamp":"2025-11-20T16:33:18.325028Z","level":"warning","event":"Process exited abnormally","exit_code":1,"logger":"task"}

@@ -1,0 +1,8 @@
+{"timestamp":"2025-11-25T16:04:40.790960Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-25T16:04:40.792705Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-25T16:04:41.266607Z","level":"info","event":"--- INCREMENTAL JOB: LAST 3 HOURS ---","logger":"task.stdout"}
+{"timestamp":"2025-11-25T16:04:41.267147Z","level":"info","event":"--- Endpoint: minio:9000 ---","logger":"task.stdout"}
+{"timestamp":"2025-11-25T16:04:41.267906Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-25T16:04:41.268156Z","level":"info","event":"Fetching last 3 hours for: AAPL","logger":"task.stdout"}
+{"timestamp":"2025-11-25T16:04:43.695920Z","level":"info","event":"   (No data received from API)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T16:04:45.692465Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

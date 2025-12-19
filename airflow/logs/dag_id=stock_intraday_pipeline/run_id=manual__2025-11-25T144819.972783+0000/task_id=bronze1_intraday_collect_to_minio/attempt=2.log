@@ -1,0 +1,168 @@
+{"timestamp":"2025-11-25T14:52:07.321798Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-25T14:52:07.324920Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-25T14:52:07.973349Z","level":"info","event":"--- START BACKFILL JOB (Target: 365 days) ---","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:07.974169Z","level":"info","event":"--- Endpoint: minio:9000 ---","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:07.975253Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:07.975697Z","level":"info","event":"🚀 Bắt đầu lấy lịch sử cho: AAPL","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:07.975981Z","level":"info","event":"   ... Requesting chunk: 2025-11-18 -> 2025-11-25","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:09.418241Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-25/symbol=AAPL/stockdata_20251125T145209Z.jsonl (781 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:09.419498Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:19.417085Z","level":"info","event":"   ... Requesting chunk: 2025-11-11 -> 2025-11-18","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:21.055699Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-18/symbol=AAPL/stockdata_20251125T145220Z.jsonl (1563 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:21.056164Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:36.051490Z","level":"info","event":"   ... Requesting chunk: 2025-11-04 -> 2025-11-11","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:38.167584Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-11/symbol=AAPL/stockdata_20251125T145238Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:38.168021Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:52.169117Z","level":"info","event":"   ... Requesting chunk: 2025-10-28 -> 2025-11-04","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:54.295859Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-11-04/symbol=AAPL/stockdata_20251125T145405Z.jsonl (2344 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:52:54.296981Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:20.247511Z","level":"info","event":"   ... Requesting chunk: 2025-10-21 -> 2025-10-28","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:53:10.157235Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-10-28/symbol=AAPL/stockdata_20251125T145310Z.jsonl (782 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:53:10.158278Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:53:21.148605Z","level":"info","event":"   ... Requesting chunk: 2025-10-14 -> 2025-10-21","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:53:21.580994Z","level":"info","event":"      (Không có dữ liệu trong tuần này)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:53:21.581495Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:46.529880Z","level":"info","event":"   ... Requesting chunk: 2025-10-07 -> 2025-10-14","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:53:37.148567Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-10-14/symbol=AAPL/stockdata_20251125T145447Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:53:37.149449Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:53:52.163628Z","level":"info","event":"   ... Requesting chunk: 2025-09-30 -> 2025-10-07","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:53:53.197376Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-10-07/symbol=AAPL/stockdata_20251125T145352Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:53:53.198077Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:07.213194Z","level":"info","event":"   ... Requesting chunk: 2025-09-23 -> 2025-09-30","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:08.346149Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-09-30/symbol=AAPL/stockdata_20251125T145408Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:08.346649Z","level":"info","event":"      💤 Nghỉ 12s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:20.331589Z","level":"info","event":"   ... Requesting chunk: 2025-09-16 -> 2025-09-23","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:21.309681Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-09-23/symbol=AAPL/stockdata_20251125T145421Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:21.310606Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:35.307201Z","level":"info","event":"   ... Requesting chunk: 2025-09-09 -> 2025-09-16","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:36.621303Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-09-16/symbol=AAPL/stockdata_20251125T145436Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:36.621841Z","level":"info","event":"      💤 Nghỉ 12s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:48.617702Z","level":"info","event":"   ... Requesting chunk: 2025-09-02 -> 2025-09-09","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:49.748973Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-09-09/symbol=AAPL/stockdata_20251125T145449Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:54:49.749389Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:02.741465Z","level":"info","event":"   ... Requesting chunk: 2025-08-26 -> 2025-09-02","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:04.183929Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-09-02/symbol=AAPL/stockdata_20251125T145503Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:04.186402Z","level":"info","event":"      💤 Nghỉ 12s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:16.171982Z","level":"info","event":"   ... Requesting chunk: 2025-08-19 -> 2025-08-26","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:17.270510Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-08-26/symbol=AAPL/stockdata_20251125T145517Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:17.271041Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:27.269871Z","level":"info","event":"   ... Requesting chunk: 2025-08-12 -> 2025-08-19","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:28.410008Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-08-19/symbol=AAPL/stockdata_20251125T145528Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:28.410580Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:50.364393Z","level":"info","event":"   ... Requesting chunk: 2025-08-05 -> 2025-08-12","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:40.441836Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-08-12/symbol=AAPL/stockdata_20251125T145540Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:40.442207Z","level":"info","event":"      💤 Nghỉ 12s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:52.423772Z","level":"info","event":"   ... Requesting chunk: 2025-07-29 -> 2025-08-05","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:53.663135Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-08-05/symbol=AAPL/stockdata_20251125T145553Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:55:53.664324Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:08.668030Z","level":"info","event":"   ... Requesting chunk: 2025-07-22 -> 2025-07-29","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:09.814593Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-07-29/symbol=AAPL/stockdata_20251125T145609Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:09.815202Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:23.827896Z","level":"info","event":"   ... Requesting chunk: 2025-07-15 -> 2025-07-22","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:25.086938Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-07-22/symbol=AAPL/stockdata_20251125T145624Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:25.087503Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:40.081821Z","level":"info","event":"   ... Requesting chunk: 2025-07-08 -> 2025-07-15","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:41.174675Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-07-15/symbol=AAPL/stockdata_20251125T145641Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:41.175671Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:55.188923Z","level":"info","event":"   ... Requesting chunk: 2025-07-01 -> 2025-07-08","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:56.361773Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-07-08/symbol=AAPL/stockdata_20251125T145656Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:56:56.362167Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:57:11.344835Z","level":"info","event":"   ... Requesting chunk: 2025-06-24 -> 2025-07-01","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:57:12.336098Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-07-01/symbol=AAPL/stockdata_20251125T145712Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:57:12.336754Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:57:23.328380Z","level":"info","event":"   ... Requesting chunk: 2025-06-17 -> 2025-06-24","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:35.350188Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-06-24/symbol=AAPL/stockdata_20251125T145724Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:35.350917Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:50.350404Z","level":"info","event":"   ... Requesting chunk: 2025-06-10 -> 2025-06-17","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:57:40.424973Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-06-17/symbol=AAPL/stockdata_20251125T145740Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:57:40.425784Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:57:54.428879Z","level":"info","event":"   ... Requesting chunk: 2025-06-03 -> 2025-06-10","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:57:55.405184Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-06-10/symbol=AAPL/stockdata_20251125T145755Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:57:55.405554Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:09.396311Z","level":"info","event":"   ... Requesting chunk: 2025-05-27 -> 2025-06-03","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:10.386543Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-06-03/symbol=AAPL/stockdata_20251125T145810Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:10.387085Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:25.381379Z","level":"info","event":"   ... Requesting chunk: 2025-05-20 -> 2025-05-27","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:26.414727Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-05-27/symbol=AAPL/stockdata_20251125T145826Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:26.415398Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:37.408957Z","level":"info","event":"   ... Requesting chunk: 2025-05-13 -> 2025-05-20","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:38.383139Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-05-20/symbol=AAPL/stockdata_20251125T145838Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:38.383712Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:49.376721Z","level":"info","event":"   ... Requesting chunk: 2025-05-06 -> 2025-05-13","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:50.358495Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-05-13/symbol=AAPL/stockdata_20251125T145850Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:58:50.359134Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:03.356407Z","level":"info","event":"   ... Requesting chunk: 2025-04-29 -> 2025-05-06","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:04.895751Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-05-06/symbol=AAPL/stockdata_20251125T145904Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:04.896443Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:17.895345Z","level":"info","event":"   ... Requesting chunk: 2025-04-22 -> 2025-04-29","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:19.045584Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-04-29/symbol=AAPL/stockdata_20251125T145918Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:19.046135Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:29.046210Z","level":"info","event":"   ... Requesting chunk: 2025-04-15 -> 2025-04-22","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:30.047172Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-04-22/symbol=AAPL/stockdata_20251125T145929Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:30.047948Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:40.038060Z","level":"info","event":"   ... Requesting chunk: 2025-04-08 -> 2025-04-15","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:41.132269Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-04-15/symbol=AAPL/stockdata_20251125T145940Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:41.136243Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:51.129425Z","level":"info","event":"   ... Requesting chunk: 2025-04-01 -> 2025-04-08","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:52.177393Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-04-08/symbol=AAPL/stockdata_20251125T145952Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T14:59:52.178199Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:00:07.185356Z","level":"info","event":"   ... Requesting chunk: 2025-03-25 -> 2025-04-01","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:00:08.358276Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-04-01/symbol=AAPL/stockdata_20251125T150008Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:00:08.358609Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:00:18.368409Z","level":"info","event":"   ... Requesting chunk: 2025-03-18 -> 2025-03-25","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:00:19.569276Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-03-25/symbol=AAPL/stockdata_20251125T150019Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:00:19.569793Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:00:34.566422Z","level":"info","event":"   ... Requesting chunk: 2025-03-11 -> 2025-03-18","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:00:35.634321Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-03-18/symbol=AAPL/stockdata_20251125T150035Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:00:35.634762Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:00:46.619091Z","level":"info","event":"   ... Requesting chunk: 2025-03-04 -> 2025-03-11","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:00:47.660596Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-03-11/symbol=AAPL/stockdata_20251125T150047Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:00:47.661206Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:00.678112Z","level":"info","event":"   ... Requesting chunk: 2025-02-25 -> 2025-03-04","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:01.844198Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-03-04/symbol=AAPL/stockdata_20251125T150101Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:01.844736Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:12.826130Z","level":"info","event":"   ... Requesting chunk: 2025-02-18 -> 2025-02-25","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:13.830333Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-02-25/symbol=AAPL/stockdata_20251125T150113Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:13.831345Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:27.839267Z","level":"info","event":"   ... Requesting chunk: 2025-02-11 -> 2025-02-18","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:28.985779Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-02-18/symbol=AAPL/stockdata_20251125T150128Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:28.986300Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:42.987075Z","level":"info","event":"   ... Requesting chunk: 2025-02-04 -> 2025-02-11","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:43.993967Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-02-11/symbol=AAPL/stockdata_20251125T150143Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:43.994398Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:05.936406Z","level":"info","event":"   ... Requesting chunk: 2025-01-28 -> 2025-02-04","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:55.986426Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-02-04/symbol=AAPL/stockdata_20251125T150155Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:01:55.987093Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:02:10.986098Z","level":"info","event":"   ... Requesting chunk: 2025-01-21 -> 2025-01-28","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:02:12.002576Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-01-28/symbol=AAPL/stockdata_20251125T150211Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:02:12.003081Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:35.953705Z","level":"info","event":"   ... Requesting chunk: 2025-01-14 -> 2025-01-21","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:02:26.119846Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-01-21/symbol=AAPL/stockdata_20251125T150225Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:02:26.120261Z","level":"info","event":"      💤 Nghỉ 11s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:02:37.112693Z","level":"info","event":"   ... Requesting chunk: 2025-01-07 -> 2025-01-14","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:02:38.900282Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-01-14/symbol=AAPL/stockdata_20251125T150238Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:02:38.901033Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:02:51.900064Z","level":"info","event":"   ... Requesting chunk: 2024-12-31 -> 2025-01-07","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:02:53.402690Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2025-01-07/symbol=AAPL/stockdata_20251125T150253Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:02:53.403322Z","level":"info","event":"      💤 Nghỉ 14s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:07.413002Z","level":"info","event":"   ... Requesting chunk: 2024-12-24 -> 2024-12-31","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:10.729800Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2024-12-31/symbol=AAPL/stockdata_20251125T150310Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:10.730331Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:25.736117Z","level":"info","event":"   ... Requesting chunk: 2024-12-17 -> 2024-12-24","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:29.304205Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2024-12-24/symbol=AAPL/stockdata_20251125T150329Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:29.304754Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:39.316188Z","level":"info","event":"   ... Requesting chunk: 2024-12-10 -> 2024-12-17","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:40.803279Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2024-12-17/symbol=AAPL/stockdata_20251125T150340Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:40.803730Z","level":"info","event":"      💤 Nghỉ 10s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:50.825197Z","level":"info","event":"   ... Requesting chunk: 2024-12-03 -> 2024-12-10","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:52.416231Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2024-12-10/symbol=AAPL/stockdata_20251125T150352Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:03:52.416778Z","level":"info","event":"      💤 Nghỉ 13s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:04:05.399728Z","level":"info","event":"   ... Requesting chunk: 2024-11-26 -> 2024-12-03","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:05:17.880765Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2024-12-03/symbol=AAPL/stockdata_20251125T150406Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:05:17.882011Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:04:21.948385Z","level":"info","event":"   ... Requesting chunk: 2024-11-19 -> 2024-11-26","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:04:23.631482Z","level":"info","event":"   ✅ Uploaded MinIO: bronze1/stocks_intraday/date_ny=2024-11-26/symbol=AAPL/stockdata_20251125T150423Z.jsonl (1953 records)","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:04:23.632146Z","level":"info","event":"      💤 Nghỉ 15s để server không ngắt kết nối...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:04:38.627590Z","level":"info","event":"🏁 Hoàn thành AAPL. Tổng record: 99605","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:04:38.628428Z","level":"info","event":"⏳ Nghỉ dài 20s trước khi sang mã cổ phiếu tiếp theo...","logger":"task.stdout"}
+{"timestamp":"2025-11-25T15:04:58.613880Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

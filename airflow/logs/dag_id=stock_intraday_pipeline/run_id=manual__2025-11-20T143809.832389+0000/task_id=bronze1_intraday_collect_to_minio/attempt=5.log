@@ -1,0 +1,8 @@
+{"timestamp":"2025-11-20T14:40:40.425340Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-20T14:40:40.426511Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-20T14:40:40.633745Z","level":"info","event":"Collector start | interval=5min | batches=3","logger":"task.stdout"}
+{"timestamp":"2025-11-20T14:40:40.636026Z","level":"info","event":"Batch 1/3: ['AAPL', 'MSFT']","logger":"task.stdout"}
+{"timestamp":"2025-11-20T14:40:42.929411Z","level":"info","event":"AAPL: infer trading date = 2025-11-19","logger":"task.stdout"}
+{"timestamp":"2025-11-20T14:40:42.931981Z","level":"info","event":"AAPL: fetched 100 records for 2025-11-19","logger":"task.stdout"}
+{"timestamp":"2025-11-20T14:40:43.231429Z","level":"info","event":"uploaded s3://warehouse/bronze1/stocks_intraday/date_ny=2025-11-19/symbol=AAPL/ts_20251120T144042Z.json (25953 bytes)","logger":"task.stdout"}
+{"timestamp":"2025-11-20T14:40:43.232101Z","level":"info","event":"AAPL: uploaded 100 recs","logger":"task.stdout"}

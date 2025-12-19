@@ -1,0 +1,9 @@
+{"timestamp":"2025-12-04T14:33:59.758477Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-12-04T14:33:59.760442Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/pipeline_finace_news.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-12-04T14:34:03.752567Z","level":"info","event":"Symbol AAPL: 46 bài","logger":"task.stdout"}
+{"timestamp":"2025-12-04T14:34:05.239349Z","level":"info","event":"Symbol MSFT: 39 bài","logger":"task.stdout"}
+{"timestamp":"2025-12-04T14:34:06.805019Z","level":"info","event":"Symbol META: 76 bài","logger":"task.stdout"}
+{"timestamp":"2025-12-04T14:34:08.647866Z","level":"info","event":"Symbol GOOGL: 81 bài","logger":"task.stdout"}
+{"timestamp":"2025-12-04T14:34:10.166777Z","level":"info","event":"Symbol AMZN: 68 bài","logger":"task.stdout"}
+{"timestamp":"2025-12-04T14:34:11.167027Z","level":"info","event":"Tổng số bài: 310","logger":"task.stdout"}
+{"timestamp":"2025-12-04T14:34:11.168386Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}

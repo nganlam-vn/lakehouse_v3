@@ -1,0 +1,24 @@
+{"timestamp":"2025-11-24T13:44:30.695534Z","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager","filename":"manager.py","lineno":179}
+{"timestamp":"2025-11-24T13:44:30.697802Z","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/stock_intraday_pipeline.py","logger":"airflow.models.dagbag.DagBag","filename":"dagbag.py","lineno":593}
+{"timestamp":"2025-11-24T13:44:31.241160Z","level":"info","event":"--- INCREMENTAL JOB: LAST 3 HOURS ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:31.241863Z","level":"info","event":"--- Endpoint: minio:9000 ---","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:31.242454Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:31.242833Z","level":"info","event":"Fetching last 3 hours for: AAPL","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:45:43.039225Z","level":"info","event":"   (No data received from API)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:34.674155Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:34.675192Z","level":"info","event":"Fetching last 3 hours for: MSFT","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:35.028414Z","level":"info","event":"   (No data received from API)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:37.028852Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:37.029497Z","level":"info","event":"Fetching last 3 hours for: META","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:37.386294Z","level":"info","event":"   (No data received from API)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:39.400072Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:39.400658Z","level":"info","event":"Fetching last 3 hours for: GOOGL","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:39.747838Z","level":"info","event":"   (No data received from API)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:41.748081Z","level":"info","event":"","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:41.748527Z","level":"info","event":"Fetching last 3 hours for: AMZN","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:42.115618Z","level":"info","event":"   (No data received from API)","logger":"task.stdout"}
+{"timestamp":"2025-11-24T13:44:42.127968Z","level":"error","event":"Server indicated the task shouldn't be running anymore. Terminating process","detail":{"detail":{"reason":"not_found","message":"Task Instance not found"}},"logger":"task"}
+{"timestamp":"2025-11-24T13:44:44.115876Z","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator","filename":"python.py","lineno":218}
+{"timestamp":"2025-11-24T13:44:44.338615Z","level":"error","event":"Top level error","logger":"task","filename":"task_runner.py","lineno":1457,"error_detail":[{"exc_type":"AirflowRuntimeError","exc_value":"API_SERVER_ERROR: {'status_code': 404, 'message': 'Server returned error', 'detail': {'detail': {'reason': 'not_found', 'message': 'Task Instance not found'}}}","exc_notes":[],"syntax_error":null,"is_cause":false,"frames":[{"filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":1450,"name":"main"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/sdk/execution_time/task_runner.py","lineno":999,"name":"run"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/sdk/execution_time/comms.py","lineno":207,"name":"send"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/sdk/execution_time/comms.py","lineno":271,"name":"_get_response"},{"filename":"/home/airflow/.local/lib/python3.12/site-packages/airflow/sdk/execution_time/comms.py","lineno":258,"name":"_from_frame"}],"is_group":false,"exceptions":[]}]}
+{"timestamp":"2025-11-24T13:44:44.352044Z","level":"warning","event":"Process exited abnormally","exit_code":1,"logger":"task"}
+{"timestamp":"2025-11-24T13:44:44.352799Z","level":"error","event":"Task killed!","logger":"task"}
