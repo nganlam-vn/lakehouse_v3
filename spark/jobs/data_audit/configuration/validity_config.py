@@ -81,13 +81,13 @@ def insert_sample_data(spark: SparkSession):
             True,
             datetime.now()
         ),
-                # CoinMarketCap - Market cap must be positive
+             
         (
             3,
             "delta",
             "bronze2",
             "coinmarketcap",
-            "quote.usd.percent_change_1h < -100 OR quote.usd.percent_change_24h < -100 OR quote.usd.percent_change_7d < -100 OR quote.usd.percent_change_30d < -100 OR quote.usd.percent_change_60d < -100 OR quote.usd.percent_change_90d < -100",
+            "quote.usd.percent_change_1h < -10 OR quote.usd.percent_change_24h < -10 OR quote.usd.percent_change_7d < -10 OR quote.usd.percent_change_30d < -10 OR quote.usd.percent_change_60d < -10 OR quote.usd.percent_change_90d < -10",
             "cd_bronze_id,name,symbol",
             "dt_record_to_bronze",
             7.0,
@@ -157,7 +157,7 @@ def insert_sample_data(spark: SparkSession):
             "delta", 
             "bronze2", 
             "coinmarketcap", 
-            "quote.usd.volume_24 < 0", 
+            "quote.usd.volume_24 <= 1", 
             "cd_bronze_id,name,symbol", 
             "dt_record_to_bronze", 
             7.0, 
@@ -222,7 +222,7 @@ def insert_sample_data(spark: SparkSession):
             "delta", 
             "bronze2", 
             "finance_news", 
-            "length(title) < 5", 
+            "length(title) <= 25", 
             "cd_bronze_id,url", 
             "dt_record_to_bronze", 
             7.0, 
