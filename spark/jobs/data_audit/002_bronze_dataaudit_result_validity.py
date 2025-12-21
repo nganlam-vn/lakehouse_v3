@@ -6,12 +6,14 @@ from pyspark.sql.functions import expr, col
 import pyspark.sql.functions as F
 import json
 from functools import reduce
+from zoneinfo import ZoneInfo
 
 BUCKET = "warehouse"
 DATAAUDIT_PREFIX = "dataaudit/validity_configuration"
 RESULTS_PATH = f"s3a://{BUCKET}/dataaudit/bronze_dataaudit_result" 
 TABLE_PATH = f"s3a://{BUCKET}/{DATAAUDIT_PREFIX}"
-now = datetime.now(timezone.utc)
+    # now = datetime.now(timezone.utc)
+now = datetime.now(ZoneInfo("Asia/Ho_Chi_Minh"))
 past_1_hour = now - timedelta(hours=2000)
 start_timestamp = past_1_hour.replace( minute=0, second=0, microsecond=0)
 end_timestamp = start_timestamp + timedelta(hours=2000)
@@ -148,6 +150,7 @@ def validity_audit(spark: SparkSession):
 
             except Exception as e:
                 print(f"Error processing id_configuration {id_configuration}: {e}")
+                continue
 
     if result_records:
         save_audit_results(spark, result_records)
