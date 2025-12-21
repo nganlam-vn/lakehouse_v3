@@ -222,7 +222,7 @@ def insert_sample_data(spark: SparkSession):
             "delta", 
             "bronze2", 
             "finance_news", 
-            "length(title) <= 25", 
+            "length(title) <= 100", 
             "cd_bronze_id,url", 
             "dt_record_to_bronze", 
             7.0, 

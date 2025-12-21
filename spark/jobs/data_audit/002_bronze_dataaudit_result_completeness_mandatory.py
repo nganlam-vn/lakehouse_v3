@@ -168,6 +168,7 @@ def completeness_mandatory_column_audit(spark: SparkSession):
 
             except Exception as e:
                 print(f"Error processing id_configuration {id_configuration}: {e}")
+                continue
 
     if result_records:
         save_audit_results(spark, result_records)
